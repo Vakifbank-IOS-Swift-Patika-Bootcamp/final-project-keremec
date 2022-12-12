@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0C8888B02943D4180094887A /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8888AF2943D4180094887A /* Secrets.swift */; };
+		0C9917D129472C40000E93F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0C9917D029472C40000E93F7 /* Alamofire */; };
+		0C9917D3294732ED000E93F7 /* RawgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D2294732ED000E93F7 /* RawgModel.swift */; };
+		0C9917D5294732FA000E93F7 /* GetRawgResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D4294732FA000E93F7 /* GetRawgResponseModel.swift */; };
+		0C9917D729473C0C000E93F7 /* RawgDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D629473C0C000E93F7 /* RawgDetailModel.swift */; };
+		0C9917D929474240000E93F7 /* vitarAppRawgClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D829474240000E93F7 /* vitarAppRawgClientTest.swift */; };
+		0C9917DA2947428C000E93F7 /* RawgClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8986E2943CC62005A6B35 /* RawgClient.swift */; };
+		0C9917DB2947429F000E93F7 /* RawgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D2294732ED000E93F7 /* RawgModel.swift */; };
+		0C9917DC294742A8000E93F7 /* GetRawgResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D4294732FA000E93F7 /* GetRawgResponseModel.swift */; };
+		0C9917DD2947451B000E93F7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8888AF2943D4180094887A /* Secrets.swift */; };
+		0C9917DE2947452B000E93F7 /* RawgDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D629473C0C000E93F7 /* RawgDetailModel.swift */; };
 		0CB8980C2943A714005A6B35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8980B2943A714005A6B35 /* AppDelegate.swift */; };
 		0CB8980E2943A714005A6B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8980D2943A714005A6B35 /* SceneDelegate.swift */; };
 		0CB898102943A714005A6B35 /* HomeSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8980F2943A714005A6B35 /* HomeSceneViewController.swift */; };
@@ -15,7 +25,6 @@
 		0CB898162943A714005A6B35 /* vitarApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CB898142943A714005A6B35 /* vitarApp.xcdatamodeld */; };
 		0CB898182943A715005A6B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB898172943A715005A6B35 /* Assets.xcassets */; };
 		0CB8981B2943A715005A6B35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB898192943A715005A6B35 /* LaunchScreen.storyboard */; };
-		0CB898262943A716005A6B35 /* vitarAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB898252943A716005A6B35 /* vitarAppTests.swift */; };
 		0CB898302943A716005A6B35 /* vitarAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8982F2943A716005A6B35 /* vitarAppUITests.swift */; };
 		0CB898322943A716005A6B35 /* vitarAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB898312943A716005A6B35 /* vitarAppUITestsLaunchTests.swift */; };
 		0CB8986D2943C97F005A6B35 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8986C2943C97F005A6B35 /* CoreDataManager.swift */; };
@@ -43,6 +52,10 @@
 
 /* Begin PBXFileReference section */
 		0C8888AF2943D4180094887A /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		0C9917D2294732ED000E93F7 /* RawgModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawgModel.swift; sourceTree = "<group>"; };
+		0C9917D4294732FA000E93F7 /* GetRawgResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRawgResponseModel.swift; sourceTree = "<group>"; };
+		0C9917D629473C0C000E93F7 /* RawgDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawgDetailModel.swift; sourceTree = "<group>"; };
+		0C9917D829474240000E93F7 /* vitarAppRawgClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vitarAppRawgClientTest.swift; sourceTree = "<group>"; };
 		0CB898082943A714005A6B35 /* vitarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vitarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB8980B2943A714005A6B35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB8980D2943A714005A6B35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +66,6 @@
 		0CB8981A2943A715005A6B35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CB8981C2943A715005A6B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CB898212943A716005A6B35 /* vitarAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vitarAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CB898252943A716005A6B35 /* vitarAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vitarAppTests.swift; sourceTree = "<group>"; };
 		0CB8982B2943A716005A6B35 /* vitarAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vitarAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB8982F2943A716005A6B35 /* vitarAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vitarAppUITests.swift; sourceTree = "<group>"; };
 		0CB898312943A716005A6B35 /* vitarAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vitarAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -69,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9917D129472C40000E93F7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +137,7 @@
 		0CB898242943A716005A6B35 /* vitarAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				0CB898252943A716005A6B35 /* vitarAppTests.swift */,
+				0C9917D829474240000E93F7 /* vitarAppRawgClientTest.swift */,
 			);
 			path = vitarAppTests;
 			sourceTree = "<group>";
@@ -196,6 +209,7 @@
 		0CB8984F2943C6FD005A6B35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0C9917D629473C0C000E93F7 /* RawgDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +249,8 @@
 		0CB898542943C71C005A6B35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0C9917D2294732ED000E93F7 /* RawgModel.swift */,
+				0C9917D4294732FA000E93F7 /* GetRawgResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +442,9 @@
 			dependencies = (
 			);
 			name = vitarApp;
+			packageProductDependencies = (
+				0C9917D029472C40000E93F7 /* Alamofire */,
+			);
 			productName = vitarApp;
 			productReference = 0CB898082943A714005A6B35 /* vitarApp.app */;
 			productType = "com.apple.product-type.application";
@@ -499,6 +518,9 @@
 				tr,
 			);
 			mainGroup = 0CB897FF2943A714005A6B35;
+			packageReferences = (
+				0C9917CF29472C40000E93F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0CB898092943A714005A6B35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -544,8 +566,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CB898712943CCAF005A6B35 /* LocalNotificationManager.swift in Sources */,
+				0C9917D3294732ED000E93F7 /* RawgModel.swift in Sources */,
+				0C9917D5294732FA000E93F7 /* GetRawgResponseModel.swift in Sources */,
 				0C8888B02943D4180094887A /* Secrets.swift in Sources */,
 				0CB898162943A714005A6B35 /* vitarApp.xcdatamodeld in Sources */,
+				0C9917D729473C0C000E93F7 /* RawgDetailModel.swift in Sources */,
 				0CB898102943A714005A6B35 /* HomeSceneViewController.swift in Sources */,
 				0CB8980C2943A714005A6B35 /* AppDelegate.swift in Sources */,
 				0CB8986F2943CC63005A6B35 /* RawgClient.swift in Sources */,
@@ -558,7 +583,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CB898262943A716005A6B35 /* vitarAppTests.swift in Sources */,
+				0C9917DB2947429F000E93F7 /* RawgModel.swift in Sources */,
+				0C9917DD2947451B000E93F7 /* Secrets.swift in Sources */,
+				0C9917DA2947428C000E93F7 /* RawgClient.swift in Sources */,
+				0C9917DC294742A8000E93F7 /* GetRawgResponseModel.swift in Sources */,
+				0C9917D929474240000E93F7 /* vitarAppRawgClientTest.swift in Sources */,
+				0C9917DE2947452B000E93F7 /* RawgDetailModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +933,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0C9917CF29472C40000E93F7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C9917D029472C40000E93F7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C9917CF29472C40000E93F7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0CB898142943A714005A6B35 /* vitarApp.xcdatamodeld */ = {
