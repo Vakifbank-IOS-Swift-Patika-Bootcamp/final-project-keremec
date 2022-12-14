@@ -57,9 +57,9 @@ final class vitarAppRawgClientTest: XCTestCase {
         //Then
         XCTAssertEqual(gameDetail?.name, "Cyberpunk 2077")
         XCTAssertEqual(gameDetail?.rating?.name, "Mature")
-        XCTAssertEqual(gameDetail?.parentPlatforms[1].platform.name, "PlayStation")
-        XCTAssertEqual(gameDetail?.developers[0].name, "CD PROJEKT RED")
-        XCTAssertEqual(gameDetail?.genres[2].name, "RPG")
+        XCTAssertEqual(gameDetail?.parentPlatforms?[1].platform?.name, "PlayStation")
+        XCTAssertEqual(gameDetail?.developers?[0].name, "CD PROJEKT RED")
+        XCTAssertEqual(gameDetail?.genres?[2].name, "RPG")
         
     }
     
@@ -78,7 +78,7 @@ final class vitarAppRawgClientTest: XCTestCase {
         waitForExpectations(timeout: 10)
         
         //Then
-        XCTAssertNil(gameDetail)
+        XCTAssertNil(gameDetail?.id)
         
     }
     

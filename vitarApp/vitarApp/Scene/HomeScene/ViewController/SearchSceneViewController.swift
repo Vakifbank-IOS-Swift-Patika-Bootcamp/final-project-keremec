@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  SearchSceneViewController.swift
 //  vitarApp
 //
-//  Created by Kerem Safa Dirican on 9.12.2022.
+//  Created by Kerem Safa Dirican on 14.12.2022.
 //
 
 import UIKit
 
-class HomeSceneViewController: UIViewController {
-    
-    @IBOutlet private weak var gameListTableView: UITableView! {
+class SearchSceneViewController: UIViewController {
+
+    @IBOutlet private weak var gameListTableView: UITableView!{
         didSet{
             gameListTableView.delegate = self
             gameListTableView.dataSource = self
@@ -17,27 +17,31 @@ class HomeSceneViewController: UIViewController {
             gameListTableView.rowHeight = 150.0
         }
     }
+    @IBOutlet private weak var searchBar: UISearchBar!{
+        didSet{
+            searchBar.delegate = self
+        }
+    }
+    
     
     private var viewModel: HomeSceneViewModelProtocol = HomeSceneViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.fetchPopularGames()
-        
     }
+    
 
 }
 
 
-extension HomeSceneViewController: HomeSceneViewModelDelegate {
+extension SearchSceneViewController: HomeSceneViewModelDelegate {
     func gamesLoaded() {
         gameListTableView.reloadData()
     }
 }
 
 
-extension HomeSceneViewController: UITableViewDelegate, UITableViewDataSource{
+extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getGameCount()
     }
@@ -52,3 +56,17 @@ extension HomeSceneViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
 }
+
+//MARK: - Searchbar Action
+
+extension SearchSceneViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text{
+            print(text)
+            viewModel.searchGames(text)
+            self.view.endEditing(true)
+        }
+    }
+    
+}
+//MARK: -

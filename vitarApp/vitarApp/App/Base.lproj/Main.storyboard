@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Popular Games-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeSceneViewController" customModule="vitarApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,28 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpV-Jq-8co">
-                                <rect key="frame" x="145" y="415.66666666666669" width="103.33333333333331" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Dk-mW-j1d">
+                                <rect key="frame" x="0.0" y="155" width="393" height="614"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zpV-Jq-8co" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2R4-km-scV"/>
-                            <constraint firstItem="zpV-Jq-8co" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hg3-HM-VDO"/>
+                            <constraint firstItem="0Dk-mW-j1d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qXE-J8-x2x"/>
+                            <constraint firstItem="0Dk-mW-j1d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rgs-E3-9QC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Dk-mW-j1d" secondAttribute="bottom" id="uWQ-Pz-Z2r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Dk-mW-j1d" secondAttribute="trailing" id="xKX-UL-t24"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="Hf3-5c-Q0W"/>
+                    <navigationItem key="navigationItem" title="Popular Games" id="Zle-VP-Nc6"/>
                     <connections>
-                        <outlet property="testLabel" destination="zpV-Jq-8co" id="4ma-ey-RQj"/>
+                        <outlet property="gameListTableView" destination="0Dk-mW-j1d" id="z25-Kg-eYq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="-27"/>
+            <point key="canvasLocation" x="1053" y="734"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qBj-Mb-Plg">
@@ -64,35 +64,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piS-Fz-Jc6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="706"/>
+            <point key="canvasLocation" x="1880" y="-27"/>
         </scene>
         <!--Search-->
         <scene sceneID="zex-rF-buQ">
             <objects>
-                <viewController id="22j-Cd-dy7" sceneMemberID="viewController">
+                <viewController id="22j-Cd-dy7" customClass="SearchSceneViewController" customModule="vitarApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZaD-lN-UCC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6M-9a-LPV">
-                                <rect key="frame" x="141" y="415.66666666666669" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hML-ES-Pdw">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="KYh-cP-LhJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="22j-Cd-dy7" id="j9a-C9-lox"/>
+                                    </connections>
+                                </searchBar>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DIa-RC-D7T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="M6M-9a-LPV" firstAttribute="centerY" secondItem="ZaD-lN-UCC" secondAttribute="centerY" id="3Z7-p2-voj"/>
-                            <constraint firstItem="M6M-9a-LPV" firstAttribute="centerX" secondItem="ZaD-lN-UCC" secondAttribute="centerX" id="dbt-LH-jpk"/>
+                            <constraint firstItem="DIa-RC-D7T" firstAttribute="trailing" secondItem="hML-ES-Pdw" secondAttribute="trailing" id="7sH-vf-LiH"/>
+                            <constraint firstItem="hML-ES-Pdw" firstAttribute="top" secondItem="DIa-RC-D7T" secondAttribute="top" id="E0s-Nn-iE9"/>
+                            <constraint firstItem="hML-ES-Pdw" firstAttribute="leading" secondItem="DIa-RC-D7T" secondAttribute="leading" id="YgC-wX-ykR"/>
+                            <constraint firstItem="DIa-RC-D7T" firstAttribute="bottom" secondItem="hML-ES-Pdw" secondAttribute="bottom" id="v0R-0L-wQb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="hCy-Az-jWZ"/>
+                    <navigationItem key="navigationItem" title="Search" id="mfr-bz-Fre"/>
+                    <connections>
+                        <outlet property="gameListTableView" destination="hML-ES-Pdw" id="KGt-Av-gPM"/>
+                        <outlet property="searchBar" destination="KYh-cP-LhJ" id="1Ax-MB-TUA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXd-Ik-Rba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820.6106870229007" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2745.801526717557" y="772.53521126760563"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="fQe-jE-aAD">
@@ -120,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8I-NT-wzn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2643.5114503816794" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="4496.9465648854957" y="-27.464788732394368"/>
         </scene>
         <!--Notes-->
         <scene sceneID="dyH-J9-gCz">
@@ -148,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6c-Zi-AHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3428.2442748091603" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="5281.679389312977" y="-27.464788732394368"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ALZ-dS-ZR1">
@@ -156,12 +168,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kpq-6D-r11" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jy4-e4-JXM">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="6DJ-UB-nOP"/>
-                        <segue destination="22j-Cd-dy7" kind="relationship" relationship="viewControllers" id="fZx-vY-wAv"/>
+                        <segue destination="HED-nE-4T4" kind="relationship" relationship="viewControllers" id="6DJ-UB-nOP"/>
+                        <segue destination="c5K-QR-mj8" kind="relationship" relationship="viewControllers" id="fZx-vY-wAv"/>
                         <segue destination="o3J-uo-ycM" kind="relationship" relationship="viewControllers" id="TPd-eM-gcx"/>
                         <segue destination="Mh5-Fs-4kp" kind="relationship" relationship="viewControllers" id="E9X-S8-VxR"/>
                     </connections>
@@ -169,6 +182,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8d-NK-R6q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2198" y="-834"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="5MA-Xm-FvL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HED-nE-4T4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="Hf3-5c-Q0W"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="w7v-7j-MDX">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="psa-ef-ZAF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ise-OF-75C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="-27.464788732394368"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="ta1-cx-Oqb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c5K-QR-mj8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" id="hCy-Az-jWZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tIn-EE-QqY">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="22j-Cd-dy7" kind="relationship" relationship="rootViewController" id="oix-aV-tSo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vnX-Og-vjh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2747.3282442748091" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
