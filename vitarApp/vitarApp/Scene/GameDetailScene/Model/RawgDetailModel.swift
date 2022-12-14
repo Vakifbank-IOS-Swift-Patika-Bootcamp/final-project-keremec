@@ -8,17 +8,17 @@
 import Foundation
 
 struct RawgDetailModel: Decodable {
-    let id: Int
-    let tba: Bool
+    let id: Int?
+    let tba: Bool?
     let name: String?
     let released: String?
     let description: String?
     let metacritic: Int?
     let rating: EsrbRating?
-    let parentPlatforms: [ParentPlatform]
-    let developers: [Developer]
-    let publishers: [Publisher]
-    let genres: [Genre]
+    let parentPlatforms: [ParentPlatform]?
+    let developers: [Developer]?
+    let publishers: [Publisher]?
+    let genres: [Genre]?
     let imageWide: String?
     
     enum CodingKeys: String, CodingKey {
@@ -38,14 +38,14 @@ struct RawgDetailModel: Decodable {
 }
 
 struct EsrbRating: Decodable{
-    let id: Int
-    let name: String
-    let slug: String
+    let id: Int?
+    let name: String?
+    let slug: String?
 }
 
 
 struct ParentPlatform: Decodable{
-    let platform: Platform
+    let platform: Platform?
 }
 
 struct Platform: Decodable {
