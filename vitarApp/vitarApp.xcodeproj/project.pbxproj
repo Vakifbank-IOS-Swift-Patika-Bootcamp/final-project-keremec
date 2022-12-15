@@ -39,6 +39,10 @@
 		0CEE92CC2948E4FB00B88175 /* HomeSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE92CB2948E4FB00B88175 /* HomeSceneViewModel.swift */; };
 		0CEE92CD2948E4FB00B88175 /* HomeSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE92CB2948E4FB00B88175 /* HomeSceneViewModel.swift */; };
 		0CEE92D32948F56500B88175 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0CEE92D22948F56500B88175 /* Kingfisher */; };
+		0CFA555C294A17D300893FD4 /* GameDetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA555B294A17D300893FD4 /* GameDetailSceneViewController.swift */; };
+		0CFA555D294A17D300893FD4 /* GameDetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA555B294A17D300893FD4 /* GameDetailSceneViewController.swift */; };
+		0CFA555F294A1B3000893FD4 /* GameDetailSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA555E294A1B3000893FD4 /* GameDetailSceneViewModel.swift */; };
+		0CFA5560294A1B3000893FD4 /* GameDetailSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA555E294A1B3000893FD4 /* GameDetailSceneViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,8 @@
 		0CEE92C5294879E200B88175 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		0CEE92C6294879E200B88175 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		0CEE92CB2948E4FB00B88175 /* HomeSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneViewModel.swift; sourceTree = "<group>"; };
+		0CFA555B294A17D300893FD4 /* GameDetailSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailSceneViewController.swift; sourceTree = "<group>"; };
+		0CFA555E294A1B3000893FD4 /* GameDetailSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailSceneViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +220,7 @@
 		0CB8984E2943C6FD005A6B35 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0CFA555E294A1B3000893FD4 /* GameDetailSceneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 		0CB898512943C6FD005A6B35 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0CFA555B294A17D300893FD4 /* GameDetailSceneViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -547,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CB898712943CCAF005A6B35 /* LocalNotificationManager.swift in Sources */,
+				0CFA555C294A17D300893FD4 /* GameDetailSceneViewController.swift in Sources */,
 				0C40A7492949D67A0076E261 /* SearchSceneViewController.swift in Sources */,
 				0C9917D3294732ED000E93F7 /* RawgModel.swift in Sources */,
 				0CEE92CC2948E4FB00B88175 /* HomeSceneViewModel.swift in Sources */,
@@ -558,6 +567,7 @@
 				0CB8980C2943A714005A6B35 /* AppDelegate.swift in Sources */,
 				0CB8986F2943CC63005A6B35 /* RawgClient.swift in Sources */,
 				0CB8986D2943C97F005A6B35 /* CoreDataManager.swift in Sources */,
+				0CFA555F294A1B3000893FD4 /* GameDetailSceneViewModel.swift in Sources */,
 				0CB8980E2943A714005A6B35 /* SceneDelegate.swift in Sources */,
 				0CEE92C7294879E200B88175 /* GameTableViewCell.swift in Sources */,
 			);
@@ -571,6 +581,8 @@
 				0C9917DB2947429F000E93F7 /* RawgModel.swift in Sources */,
 				0C9917DD2947451B000E93F7 /* Secrets.swift in Sources */,
 				0C9917DA2947428C000E93F7 /* RawgClient.swift in Sources */,
+				0CFA555D294A17D300893FD4 /* GameDetailSceneViewController.swift in Sources */,
+				0CFA5560294A1B3000893FD4 /* GameDetailSceneViewModel.swift in Sources */,
 				0C9917DC294742A8000E93F7 /* GetRawgResponseModel.swift in Sources */,
 				0C9917D929474240000E93F7 /* vitarAppRawgClientTest.swift in Sources */,
 				0CEE92CD2948E4FB00B88175 /* HomeSceneViewModel.swift in Sources */,

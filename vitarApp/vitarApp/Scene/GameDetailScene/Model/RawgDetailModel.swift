@@ -26,7 +26,7 @@ struct RawgDetailModel: Decodable {
         case tba
         case name
         case released
-        case description
+        case description = "description_raw"
         case metacritic
         case developers
         case publishers
