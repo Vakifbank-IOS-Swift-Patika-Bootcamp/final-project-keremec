@@ -26,6 +26,18 @@ class HomeSceneViewController: UIViewController {
         viewModel.fetchPopularGames()
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "HometoDetail":
+            if let gameId = sender as? Int{
+                let goalVC = segue.destination as! GameDetailSceneViewController
+                goalVC.gameId = gameId
+            }
+        default:
+            print("identifier not found")
+        }
+    }
 
 }
 
@@ -49,6 +61,13 @@ extension HomeSceneViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.configureCell(obj)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let gameId = viewModel.getGameId(at: indexPath.row){
+            performSegue(withIdentifier: "HometoDetail", sender: gameId)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

@@ -8,6 +8,8 @@
 import UIKit
 
 class SearchSceneViewController: UIViewController {
+    
+    var modalCall:Int?
 
     @IBOutlet private weak var gameListTableView: UITableView!{
         didSet{
@@ -25,11 +27,23 @@ class SearchSceneViewController: UIViewController {
     
     
     private var viewModel: HomeSceneViewModelProtocol = HomeSceneViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "SearchtoDetail":
+            if let gameId = sender as? Int{
+                let goalVC = segue.destination as! GameDetailSceneViewController
+                goalVC.gameId = gameId
+            }
+        default:
+            print("identifier not found")
+        }
+    }
 
 }
 
@@ -55,6 +69,23 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let modalCall{
+            switch modalCall {
+            case 1:
+                // Will used for notes
+                print("will used for notes")
+            default:
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
+        
+        if let gameId = viewModel.getGameId(at: indexPath.row){
+            performSegue(withIdentifier: "SearchtoDetail", sender: gameId)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 //MARK: - Searchbar Action
@@ -62,7 +93,6 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource{
 extension SearchSceneViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text{
-            print(text)
             viewModel.searchGames(text)
             self.view.endEditing(true)
         }

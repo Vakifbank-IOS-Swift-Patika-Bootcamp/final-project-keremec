@@ -6,4 +6,8 @@
   
 */
 
-"HOME_SCREEN_LABEL" = "Ana Sayfa";
+"PLACEHOLDER_LABEL" = "";
+"HOME_SCREEN_LABEL" = "Home Screen";
+"NO_SCORE" = "-";
+"TBA_DATE" = "TBA";
+"UNKNOWN_DATE" = "TBA";

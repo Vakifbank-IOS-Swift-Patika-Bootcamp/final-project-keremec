@@ -88,7 +88,7 @@ final class GameTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         enablePlatform(id: -1)
-        gameImage.image = UIImage(named: "no-poster")
+        gameImage.image = nil
     }
     
 }
