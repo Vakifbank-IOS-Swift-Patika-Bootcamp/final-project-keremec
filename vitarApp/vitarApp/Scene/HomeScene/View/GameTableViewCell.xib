@@ -17,21 +17,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-poster" translatesAutoresizingMaskIntoConstraints="NO" id="3FG-Ap-NAA">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3FG-Ap-NAA">
                         <rect key="frame" x="15" y="12.666666666666671" width="85" height="125.00000000000001"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="85" id="qfz-g6-3Ou"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="275" id="STs-Or-YO4"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="qfz-g6-3Ou"/>
                             <constraint firstAttribute="height" constant="125" id="vjh-OC-ONZ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oZd-Rj-CxC">
-                        <rect key="frame" x="115" y="26" width="273" height="25.333333333333329"/>
+                        <rect key="frame" x="115" y="26" width="263" height="25.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="width" priority="999" constant="263" id="SOf-dO-bJi"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AqC-yi-QfX">
-                        <rect key="frame" x="115" y="61.333333333333336" width="253" height="19.333333333333336"/>
+                        <rect key="frame" x="115" y="61.333333333333336" width="263" height="19.333333333333336"/>
+                        <constraints>
+                            <constraint firstAttribute="width" priority="999" constant="263" id="kBc-p9-XGv"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
@@ -70,14 +77,14 @@
                     <constraint firstItem="AqC-yi-QfX" firstAttribute="leading" secondItem="3FG-Ap-NAA" secondAttribute="trailing" constant="15" id="Cxk-qM-9ss"/>
                     <constraint firstItem="AqC-yi-QfX" firstAttribute="top" secondItem="oZd-Rj-CxC" secondAttribute="bottom" constant="10" id="HXp-s8-m0d"/>
                     <constraint firstItem="3FG-Ap-NAA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12.5" id="JKk-Vb-nqF"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="AqC-yi-QfX" secondAttribute="trailing" constant="5" id="JM8-sf-IQv"/>
+                    <constraint firstAttribute="trailing" secondItem="AqC-yi-QfX" secondAttribute="trailing" constant="15" id="JM8-sf-IQv"/>
                     <constraint firstItem="oZd-Rj-CxC" firstAttribute="leading" secondItem="3FG-Ap-NAA" secondAttribute="trailing" constant="15" id="VLI-yU-rlq"/>
                     <constraint firstAttribute="bottom" secondItem="3FG-Ap-NAA" secondAttribute="bottom" constant="12.5" id="fpP-m9-foz"/>
                     <constraint firstItem="m8b-vp-4eV" firstAttribute="leading" secondItem="3FG-Ap-NAA" secondAttribute="trailing" constant="5" id="hzC-wX-un1"/>
                     <constraint firstItem="3FG-Ap-NAA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="iCI-YF-Jq1"/>
                     <constraint firstItem="oZd-Rj-CxC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="oAq-Jo-Rpo"/>
                     <constraint firstItem="m8b-vp-4eV" firstAttribute="top" secondItem="AqC-yi-QfX" secondAttribute="bottom" constant="10" id="p4W-nJ-USa"/>
-                    <constraint firstAttribute="trailing" secondItem="oZd-Rj-CxC" secondAttribute="trailing" constant="5" id="uV0-27-vee"/>
+                    <constraint firstAttribute="trailing" secondItem="oZd-Rj-CxC" secondAttribute="trailing" constant="15" id="uV0-27-vee"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -96,7 +103,6 @@
     <resources>
         <image name="desktopcomputer" catalog="system" width="128" height="101"/>
         <image name="n.square.fill" catalog="system" width="128" height="114"/>
-        <image name="no-poster" width="640" height="360"/>
         <image name="playstation.logo" catalog="system" width="128" height="92"/>
         <image name="xbox.logo" catalog="system" width="128" height="123"/>
         <systemColor name="placeholderTextColor">

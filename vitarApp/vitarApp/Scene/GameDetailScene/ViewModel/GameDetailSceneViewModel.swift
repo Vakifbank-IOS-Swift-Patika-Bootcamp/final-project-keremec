@@ -19,6 +19,9 @@ protocol GameDetailSceneViewModelProtocol {
     func getGameScore() -> String?
     func getGameDetail() -> String?
     func getGamePlatforms() -> [ParentPlatform]?
+    
+    func handleFavorite() -> Bool?
+    func isFavoriteGame(_ id:Int) -> Bool?
 }
 
 protocol GameDetailSceneViewModelDelegate: AnyObject {
@@ -78,25 +81,7 @@ final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
     }
     
     func getGameRating() -> String? {
-        if let rating = game?.rating?.id{
-            switch rating {
-            case 1:
-                return "E"
-            case 2:
-                return "E10+"
-            case 3:
-                return "T"
-            case 4:
-                return "M"
-            case 5:
-                return "AO"
-            case 6:
-                return "RP"
-            default:
-                return "NR"
-            }
-        }
-        return "NR"
+        Globals.sharedInstance.Esrb(id: game?.rating?.id)
     }
     
     func getGameDate() -> String? {
@@ -105,11 +90,10 @@ final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
         }
         
         if let date = game?.released{
-            return date.replacingOccurrences(of: "-", with: "/")
+            return Globals.sharedInstance.formatDate(date: date)
         }
         
         return nil
-        
     }
     
     func getGameScore() -> String? {
@@ -127,6 +111,38 @@ final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
         return game?.parentPlatforms
     }
     
-
+    
+    func handleFavorite() -> Bool?{
+        if let gameId = game?.id{
+            if let isFavorite = isFavoriteGame(gameId){
+                if isFavorite{  return unlikeGame() }
+                return likeGame()
+            }
+            return nil
+        }
+        return nil
+    }
+    
+    func isFavoriteGame(_ id: Int) -> Bool? {
+        CoreDataManager.shared.isFavorite(id)
+    }
+    
+    private func likeGame() -> Bool {
+        if let gameId = game?.id, let imageId = URL(string: game?.imageWide ?? "")?.lastPathComponent{
+            guard CoreDataManager.shared.saveFavorite(gameId: gameId, imageId: imageId) != nil else {return !true}
+            Globals.sharedInstance.isFavoriteChanged = true
+            return true
+        }
+        return !true
+    }
+    
+    private func unlikeGame() -> Bool {
+        if let gameId = game?.id{
+            guard CoreDataManager.shared.deleteFavoriteWithId(id: gameId) != nil else {return !false}
+            Globals.sharedInstance.isFavoriteChanged = true
+            return false
+        }
+        return !false
+    }
 }
 

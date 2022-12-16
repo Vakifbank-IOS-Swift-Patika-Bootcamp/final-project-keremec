@@ -11,3 +11,6 @@
 "NO_SCORE" = "-";
 "TBA_DATE" = "TBA";
 "UNKNOWN_DATE" = "TBA";
+
+//Favorite Pages
+"REMOVE_FAVORITE" = "Remove";

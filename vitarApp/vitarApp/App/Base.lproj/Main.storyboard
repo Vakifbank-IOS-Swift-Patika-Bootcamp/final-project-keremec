@@ -67,7 +67,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="34.333333333333336"/>
                                         <color key="tintColor" systemColor="secondaryLabelColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="E10+"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNv-eR-cy7">
                                         <rect key="frame" x="124.33333333333334" y="0.0" width="104.33333333333334" height="34.333333333333336"/>
@@ -81,7 +81,7 @@
                                         <rect key="frame" x="248.66666666666671" y="0.0" width="104.33333333333334" height="34.333333333333336"/>
                                         <color key="tintColor" systemColor="secondaryLabelColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" image="star.fill" catalog="system" title="98" imagePadding="1">
+                                        <buttonConfiguration key="configuration" style="tinted" image="star.fill" catalog="system" title="  " imagePadding="1">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             </preferredSymbolConfiguration>
@@ -136,11 +136,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-8F-9ZZ">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-8F-9ZZ">
                                 <rect key="frame" x="314" y="241.33333333333334" width="50.666666666666686" height="34.333333333333343"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" image="heart.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="pressLikeGame:" destination="2G6-kQ-Ky9" eventType="touchUpInside" id="eNf-Tu-Hjp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cMD-2N-0bs"/>
@@ -153,6 +156,7 @@
                             <constraint firstItem="3oF-kh-pxA" firstAttribute="top" secondItem="cMD-2N-0bs" secondAttribute="top" constant="25" id="4wH-d5-UWX"/>
                             <constraint firstItem="xYm-VL-UYj" firstAttribute="top" secondItem="6ip-g5-V2n" secondAttribute="bottom" constant="20" id="6rW-0e-JiF"/>
                             <constraint firstItem="cMD-2N-0bs" firstAttribute="trailing" secondItem="6ip-g5-V2n" secondAttribute="trailing" constant="20" id="9L6-mX-0nv"/>
+                            <constraint firstItem="3oF-kh-pxA" firstAttribute="leading" secondItem="cMD-2N-0bs" secondAttribute="leading" constant="22.670000000000002" id="DLX-15-Ixd"/>
                             <constraint firstItem="6ip-g5-V2n" firstAttribute="leading" secondItem="cMD-2N-0bs" secondAttribute="leading" constant="20" id="ElQ-9J-ZjS"/>
                             <constraint firstItem="3oF-kh-pxA" firstAttribute="centerX" secondItem="H5L-e8-Ex9" secondAttribute="centerX" id="FHt-Zn-Nfi"/>
                             <constraint firstItem="cMD-2N-0bs" firstAttribute="trailing" secondItem="RwF-2g-cOg" secondAttribute="trailing" constant="25" id="KAa-pf-Jhc"/>
@@ -176,6 +180,7 @@
                         <outlet property="detailText" destination="xYm-VL-UYj" id="Dfw-52-4d1"/>
                         <outlet property="gameImageView" destination="3oF-kh-pxA" id="k8h-Kf-uxx"/>
                         <outlet property="infoLabel" destination="JBu-ry-0V1" id="Z8z-5B-TnP"/>
+                        <outlet property="likeGameOutlet" destination="pdY-8F-9ZZ" id="R3b-a5-lu3"/>
                         <outlet property="platformNintendo" destination="cnG-uQ-5Bc" id="B32-8A-g2H"/>
                         <outlet property="platformPC" destination="oui-Vb-TMM" id="Bek-DY-FrC"/>
                         <outlet property="platformSony" destination="du0-If-7bj" id="zdA-B0-PK8"/>
@@ -188,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piS-Fz-Jc6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="1570"/>
+            <point key="canvasLocation" x="2431" y="1643"/>
         </scene>
         <!--Search-->
         <scene sceneID="zex-rF-buQ">
@@ -234,30 +239,34 @@
         <!--Favorites-->
         <scene sceneID="fQe-jE-aAD">
             <objects>
-                <viewController id="o3J-uo-ycM" sceneMemberID="viewController">
+                <viewController id="o3J-uo-ycM" customClass="FavoriteSceneViewController" customModule="vitarApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xIw-EG-BkE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hb-gK-Czi">
-                                <rect key="frame" x="133.33333333333334" y="415.66666666666669" width="126.33333333333334" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="F8T-hY-GpK">
+                                <rect key="frame" x="0.0" y="155" width="393" height="614"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DvG-g3-K8Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3hb-gK-Czi" firstAttribute="centerY" secondItem="xIw-EG-BkE" secondAttribute="centerY" id="HZl-YY-5ar"/>
-                            <constraint firstItem="3hb-gK-Czi" firstAttribute="centerX" secondItem="xIw-EG-BkE" secondAttribute="centerX" id="dMY-nh-apn"/>
+                            <constraint firstItem="F8T-hY-GpK" firstAttribute="leading" secondItem="DvG-g3-K8Y" secondAttribute="leading" id="MUE-3q-V0c"/>
+                            <constraint firstItem="DvG-g3-K8Y" firstAttribute="trailing" secondItem="F8T-hY-GpK" secondAttribute="trailing" id="RcZ-wi-nrd"/>
+                            <constraint firstItem="DvG-g3-K8Y" firstAttribute="bottom" secondItem="F8T-hY-GpK" secondAttribute="bottom" id="hPV-8F-WEF"/>
+                            <constraint firstItem="F8T-hY-GpK" firstAttribute="top" secondItem="DvG-g3-K8Y" secondAttribute="top" id="jtb-gt-JhP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="vTL-nt-zBe"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="T9x-ed-UQe"/>
+                    <connections>
+                        <outlet property="favoriteListTableView" destination="F8T-hY-GpK" id="EGC-97-K04"/>
+                        <segue destination="2G6-kQ-Ky9" kind="presentation" identifier="FavoritetoDetail" id="iW9-Vi-Afs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8I-NT-wzn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4040" y="-27"/>
+            <point key="canvasLocation" x="4039" y="815"/>
         </scene>
         <!--Notes-->
         <scene sceneID="dyH-J9-gCz">
@@ -300,7 +309,7 @@
                     <connections>
                         <segue destination="HED-nE-4T4" kind="relationship" relationship="viewControllers" id="6DJ-UB-nOP"/>
                         <segue destination="c5K-QR-mj8" kind="relationship" relationship="viewControllers" id="fZx-vY-wAv"/>
-                        <segue destination="o3J-uo-ycM" kind="relationship" relationship="viewControllers" id="TPd-eM-gcx"/>
+                        <segue destination="iTY-qp-C3c" kind="relationship" relationship="viewControllers" id="TPd-eM-gcx"/>
                         <segue destination="Mh5-Fs-4kp" kind="relationship" relationship="viewControllers" id="E9X-S8-VxR"/>
                     </connections>
                 </tabBarController>
@@ -346,9 +355,28 @@
             </objects>
             <point key="canvasLocation" x="1850" y="-27"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="NXZ-Up-7HP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iTY-qp-C3c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" id="vTL-nt-zBe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vFh-3k-1fB">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o3J-uo-ycM" kind="relationship" relationship="rootViewController" id="ZtY-Ph-QvH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0YT-am-9Zu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4038.9312977099235" y="-27.464788732394368"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XB2-H8-CGW"/>
+        <segue reference="iW9-Vi-Afs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="desktopcomputer" catalog="system" width="128" height="101"/>

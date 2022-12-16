@@ -69,7 +69,7 @@ final class GameTableViewCell: UITableViewCell {
         if let imgUrl = imgUrl?.replacingOccurrences(of: "media/g", with: "media/resize/420/-/g"){
             guard let url = URL(string: imgUrl) else { return }
             DispatchQueue.main.async {
-                self.gameImage.kf.setImage(with: url, placeholder: UIImage(named: "no-poster"))
+                self.gameImage.kf.setImage(with: url, placeholder: nil)
             }
         }
     }

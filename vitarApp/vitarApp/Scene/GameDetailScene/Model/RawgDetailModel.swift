@@ -35,6 +35,21 @@ struct RawgDetailModel: Decodable {
         case parentPlatforms = "parent_platforms"
         case imageWide = "background_image"
     }
+    
+    init(id: Int) {
+        self.id = id
+        self.tba = nil
+        self.name = nil
+        self.released = nil
+        self.description = nil
+        self.metacritic = nil
+        self.rating = nil
+        self.parentPlatforms = nil
+        self.developers = nil
+        self.publishers = nil
+        self.genres = nil
+        self.imageWide = nil
+    }
 }
 
 struct EsrbRating: Decodable{
