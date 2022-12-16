@@ -22,7 +22,11 @@ class GameDetailSceneViewController: UIViewController {
     @IBOutlet private weak var platformSony: UIButton!
     @IBOutlet private weak var platformNintendo: UIButton!
     
+    
+    @IBOutlet private weak var likeGameOutlet: UIButton!
+    
     var gameId: Int?
+    var delegateFavorite: FavoriteSceneViewController?
     private var viewModel: GameDetailSceneViewModelProtocol = GameDetailSceneViewModel()
     
     override func viewDidLoad() {
@@ -37,6 +41,15 @@ class GameDetailSceneViewController: UIViewController {
         guard let id = gameId else { return }
         viewModel.delegate = self
         viewModel.fetchGameDetail(id)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isBeingDismissed {
+            if Globals.sharedInstance.isFavoriteChanged{
+                delegateFavorite?.viewWillAppear(true)
+            }
+        }
     }
     
     
@@ -58,6 +71,26 @@ class GameDetailSceneViewController: UIViewController {
         default:
             break
         }
+        
+    }
+    
+    private func favoriteHandler(status:Bool?){
+        if let status{
+            if status{
+                likeGameOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            }else{
+                likeGameOutlet.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+            likeGameOutlet.isHidden = false
+            return
+        }
+        likeGameOutlet.isHidden = true
+        return
+    }
+    
+    
+    @IBAction func pressLikeGame(_ sender: Any) {
+        favoriteHandler(status: viewModel.handleFavorite())
     }
     
 
@@ -67,6 +100,9 @@ class GameDetailSceneViewController: UIViewController {
 extension GameDetailSceneViewController: GameDetailSceneViewModelDelegate{
     func gameLoaded() {
         DispatchQueue.main.async {
+            if let id = self.gameId{
+                self.favoriteHandler(status: self.viewModel.isFavoriteGame(id))
+            }
             self.publisherLabel.text = self.viewModel.getGamePublisher()
             self.titleLabel.text = self.viewModel.getGameTitle()
             self.infoLabel.text = self.viewModel.getGameInfo()
@@ -84,7 +120,7 @@ extension GameDetailSceneViewController: GameDetailSceneViewModelDelegate{
                 self.scoreOutlet.setImage(UIImage(systemName: "star.slash"), for: .normal)
             }
             self.detailText.text = self.viewModel.getGameDetail()
-            self.gameImageView.kf.setImage(with: self.viewModel.getGameImageUrl(420), placeholder: UIImage(named: "no-poster"))
+            self.gameImageView.kf.setImage(with: self.viewModel.getGameImageUrl(420), placeholder: nil)
             
             if let platforms = self.viewModel.getGamePlatforms(){
                 for i in platforms{
