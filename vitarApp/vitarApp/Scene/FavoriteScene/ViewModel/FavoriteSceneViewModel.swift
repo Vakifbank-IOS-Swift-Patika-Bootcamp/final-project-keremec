@@ -29,7 +29,7 @@ final class FavoriteSceneViewModel: FavoriteSceneViewModelProtocol {
     func fetchFavoriteGames() {
         Globals.sharedInstance.isFavoriteChanged = false
         games = [RawgDetailModel]()
-        favorites = CoreDataManager.shared.getFavorites()
+        favorites = FavoriteCoreDataManager.shared.getFavorites()
         var onQueue = favorites.count
         if favorites.count <= 0{
             delegate?.favoritesLoaded()
@@ -67,7 +67,8 @@ final class FavoriteSceneViewModel: FavoriteSceneViewModelProtocol {
     }
     
     func removeGame(at index:Int){
-        CoreDataManager.shared.deleteFavorite(game: favorites[index])
+        FavoriteCoreDataManager.shared.deleteFavorite(game: favorites[index])
+        favorites.remove(at: index)
         games?.remove(at: index)
         self.delegate?.favoritesLoaded()
     }

@@ -14,3 +14,7 @@
 
 //Favorite Pages
 "REMOVE_FAVORITE" = "Remove";
+
+//Notes Page
+"PLACEHOLDER_NOTE" = "Enter your text here";
+"SELECT_BUTTON_TEXT" = "Select";

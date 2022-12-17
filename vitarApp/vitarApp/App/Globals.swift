@@ -13,6 +13,8 @@ class Globals {
     
     var isFavoriteChanged = false
     
+    var isNotesChanged = false
+    
     func formatDate(date:String) -> String{
         return date.replacingOccurrences(of: "-", with: "/")
     }

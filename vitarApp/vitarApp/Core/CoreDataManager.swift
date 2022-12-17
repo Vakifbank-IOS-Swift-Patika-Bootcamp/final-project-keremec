@@ -8,8 +8,9 @@
 import UIKit
 import CoreData
 
-final class CoreDataManager {
-    static let shared = CoreDataManager()
+final class FavoriteCoreDataManager {
+    // MARK: - Shared
+    static let shared = FavoriteCoreDataManager()
     private let managedContext: NSManagedObjectContext!
     
     private init() {
@@ -17,6 +18,7 @@ final class CoreDataManager {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
+    // MARK: - Favorite
     func saveFavorite(gameId:Int, imageId:String) -> Bool? {
         let entity = NSEntityDescription.entity(forEntityName: "Favorite", in: managedContext)!
         let game = NSManagedObject(entity: entity, insertInto: managedContext)
@@ -97,6 +99,76 @@ final class CoreDataManager {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
             return nil
+        }
+    }
+}
+
+
+final class NoteCoreDataManager {
+    // MARK: - Shared
+    static let shared = NoteCoreDataManager()
+    private let managedContext: NSManagedObjectContext!
+    
+    private init() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        managedContext = appDelegate.persistentContainer.viewContext
+    }
+    
+    // MARK: - Note
+    func saveNote(obj:NoteModel) -> Note? {
+        let entity = NSEntityDescription.entity(forEntityName: "Note", in: managedContext)!
+        let note = NSManagedObject(entity: entity, insertInto: managedContext)
+        note.setValue(obj.gameId, forKey: "gameId")
+        note.setValue(obj.gameTitle, forKey: "gameTitle")
+        note.setValue(obj.imageId, forKey: "imageId")
+        note.setValue(obj.imageUrl, forKey: "imageUrl")
+        note.setValue(obj.noteTitle, forKey: "noteTitle")
+        note.setValue(obj.noteDetail, forKey: "noteDetail")
+        
+        do {
+            try managedContext.save()
+            return note as? Note
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        return nil
+    }
+    
+    func getNotes() -> [Note] {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Note")
+        do {
+            let notes = try managedContext.fetch(fetchRequest)
+            return notes as! [Note]
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return []
+    }
+    
+    func deleteNote(note: Note) {
+        managedContext.delete(note)
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func editNote(obj: Note, newObj:NoteModel) {
+        let note = managedContext.object(with: obj.objectID)
+        note.setValue(newObj.gameId, forKey: "gameId")
+        note.setValue(newObj.gameTitle, forKey: "gameTitle")
+        note.setValue(newObj.imageId, forKey: "imageId")
+        note.setValue(newObj.imageUrl, forKey: "imageUrl")
+        note.setValue(newObj.noteTitle, forKey: "noteTitle")
+        note.setValue(newObj.noteDetail, forKey: "noteDetail")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
         }
     }
     

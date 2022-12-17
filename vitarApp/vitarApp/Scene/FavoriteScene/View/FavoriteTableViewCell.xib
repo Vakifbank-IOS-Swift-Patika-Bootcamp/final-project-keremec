@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X7o-ey-bGq">
-                        <rect key="frame" x="15" y="12.666666666666671" width="185" height="115"/>
+                        <rect key="frame" x="15" y="12.666666666666671" width="175" height="115"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="115" id="5t4-qg-HQ3"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="9er-ZH-ypn"/>
@@ -26,7 +26,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Respawn Entertaiment, Electronic Arts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hHc-iy-v7h">
-                        <rect key="frame" x="17" y="130.66666666666666" width="185" height="12"/>
+                        <rect key="frame" x="17" y="130.66666666666666" width="175" height="12"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="ZYS-L9-Od3"/>
                         </constraints>
@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cyberpunk 2077" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.45000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2z-gs-Q4E">
-                        <rect key="frame" x="215" y="20" width="173" height="37"/>
+                        <rect key="frame" x="205" y="20" width="173" height="37"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" id="ScC-EK-7AN"/>
                             <constraint firstAttribute="height" constant="37" id="bDh-jE-DLM"/>
@@ -45,7 +45,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OsF-V7-9Ek">
-                        <rect key="frame" x="215" y="63" width="173" height="27"/>
+                        <rect key="frame" x="205" y="63" width="173" height="27"/>
                         <subviews>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncI-jq-9rn">
                                 <rect key="frame" x="0.0" y="0.0" width="62" height="27"/>
@@ -73,7 +73,7 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBF-ER-FJo">
-                        <rect key="frame" x="215" y="96" width="173" height="27"/>
+                        <rect key="frame" x="205" y="96" width="173" height="27"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" id="B27-38-HFA"/>
                             <constraint firstAttribute="height" constant="27" id="JYR-QH-TVk"/>
@@ -98,7 +98,7 @@
                     <constraint firstItem="X7o-ey-bGq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12.5" id="aLc-Gv-Ys8"/>
                     <constraint firstAttribute="bottom" secondItem="hHc-iy-v7h" secondAttribute="bottom" constant="7" id="aum-yg-Mr8"/>
                     <constraint firstItem="hHc-iy-v7h" firstAttribute="width" secondItem="X7o-ey-bGq" secondAttribute="width" id="nPB-e6-8xe"/>
-                    <constraint firstAttribute="trailing" secondItem="o2z-gs-Q4E" secondAttribute="trailing" constant="5" id="tuv-Af-Agm"/>
+                    <constraint firstAttribute="trailing" secondItem="o2z-gs-Q4E" secondAttribute="trailing" constant="15" id="tuv-Af-Agm"/>
                     <constraint firstItem="OsF-V7-9Ek" firstAttribute="leading" secondItem="X7o-ey-bGq" secondAttribute="trailing" constant="15" id="vw5-jI-Wqq"/>
                     <constraint firstItem="hHc-iy-v7h" firstAttribute="top" secondItem="X7o-ey-bGq" secondAttribute="bottom" constant="3" id="w0m-Az-vkN"/>
                 </constraints>
