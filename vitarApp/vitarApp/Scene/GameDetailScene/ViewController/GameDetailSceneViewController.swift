@@ -8,14 +8,32 @@
 import UIKit
 
 class GameDetailSceneViewController: UIViewController {
+    
+    //MARK: - Outlets and Variables
 
-    @IBOutlet private weak var gameImageView: UIImageView!
+    @IBOutlet private weak var gameImageView: UIImageView!{
+        didSet{
+            gameImageView.layer.cornerRadius = 7.5
+        }
+    }
     @IBOutlet private weak var publisherLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var infoLabel: UILabel!
-    @IBOutlet private weak var ratingOutlet: UIButton!
-    @IBOutlet private weak var dateOutlet: UIButton!
-    @IBOutlet private weak var scoreOutlet: UIButton!
+    @IBOutlet private weak var ratingOutlet: UIButton!{
+        didSet{
+            ratingOutlet.titleLabel?.text = ""
+        }
+    }
+    @IBOutlet private weak var dateOutlet: UIButton!{
+        didSet{
+            dateOutlet.titleLabel?.text = ""
+        }
+    }
+    @IBOutlet private weak var scoreOutlet: UIButton!{
+        didSet{
+            scoreOutlet.titleLabel?.text = ""
+        }
+    }
     @IBOutlet private weak var detailText: UITextView!
     @IBOutlet private weak var platformPC: UIButton!
     @IBOutlet private weak var platformXbox: UIButton!
@@ -29,15 +47,9 @@ class GameDetailSceneViewController: UIViewController {
     var delegateFavorite: FavoriteSceneViewController?
     private var viewModel: GameDetailSceneViewModelProtocol = GameDetailSceneViewModel()
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        gameImageView.layer.cornerRadius = 7.5
-        
-        ratingOutlet.titleLabel?.text = ""
-        dateOutlet.titleLabel?.text = ""
-        scoreOutlet.titleLabel?.text = ""
-        
         guard let id = gameId else { return }
         viewModel.delegate = self
         viewModel.fetchGameDetail(id)
@@ -52,7 +64,12 @@ class GameDetailSceneViewController: UIViewController {
         }
     }
     
+    //MARK: - Actions
+    @IBAction func pressLikeGame(_ sender: Any) {
+        favoriteHandler(status: viewModel.handleFavorite())
+    }
     
+    //MARK: - UI Helpers
     private func enablePlatform(id:Int){
         switch id {
         case -1:
@@ -73,7 +90,6 @@ class GameDetailSceneViewController: UIViewController {
         }
         
     }
-    
     private func favoriteHandler(status:Bool?){
         if let status{
             if status{
@@ -87,16 +103,9 @@ class GameDetailSceneViewController: UIViewController {
         likeGameOutlet.isHidden = true
         return
     }
-    
-    
-    @IBAction func pressLikeGame(_ sender: Any) {
-        favoriteHandler(status: viewModel.handleFavorite())
-    }
-    
-
 }
 
-
+//MARK: - Delegate Functions
 extension GameDetailSceneViewController: GameDetailSceneViewModelDelegate{
     func gameLoaded() {
         DispatchQueue.main.async {

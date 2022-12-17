@@ -21,11 +21,12 @@ class NoteSceneViewController: UIViewController {
     }
     
     private var viewModel: NoteSceneViewModelProtocol = NoteSceneViewModel()
-
+    
     //MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = NSLocalizedString("NOTES_PAGE", comment: "Notes Page")
         viewModel.delegate = self
         viewModel.fetchNotes()
     }
@@ -89,34 +90,33 @@ extension NoteSceneViewController: UITableViewDataSource, UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
-    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let note = viewModel.getNote(at: indexPath.row)
         
-            let deleteConfirmAction = UIContextualAction(style: .destructive, title: NSLocalizedString("DELETE_NOTE", comment: "Delete")){ (contextualAction, view, bool ) in
-                let alert = UIAlertController(title: NSLocalizedString("CONFIRM_DELETE_NOTE", comment: "Do you want to delete this note?"), message: "\(note?.noteTitle! ?? "")", preferredStyle: .actionSheet)
-                
-                let cancelAction = UIAlertAction(title: NSLocalizedString("CANCEL_ACTION", comment: "Cancel"), style: .cancel){action in
-                    tableView.reloadRows(at: [indexPath], with: .right)
-                    tableView.reloadData()
+        let deleteConfirmAction = UIContextualAction(style: .destructive, title: NSLocalizedString("DELETE_NOTE", comment: "Delete")){ (contextualAction, view, bool ) in
+            let alert = UIAlertController(title: NSLocalizedString("CONFIRM_DELETE_NOTE", comment: "Do you want to delete this note?"), message: "\(note?.noteTitle! ?? "")", preferredStyle: .actionSheet)
+            
+            let cancelAction = UIAlertAction(title: NSLocalizedString("CANCEL_TEXT", comment: "Cancel"), style: .cancel){action in
+                tableView.reloadRows(at: [indexPath], with: .right)
+                tableView.reloadData()
             }
-                
-                alert.addAction(cancelAction)
-                
-                let yesAction = UIAlertAction(title: NSLocalizedString("DELETE_NOTE", comment: "Delete"), style: .destructive){action in
-                    self.viewModel.deleteNote(at: indexPath.row)
-                    tableView.reloadRows(at: [indexPath], with: .left)
-                    self.viewModel.fetchNotes()
-
-                }
-                alert.addAction(yesAction)
-                alert.popoverPresentationController?.sourceItem = self.newNoteButton
-                self.newNoteButton.isHidden = false
-                self.present(alert, animated: true)
+            
+            alert.addAction(cancelAction)
+            
+            let yesAction = UIAlertAction(title: NSLocalizedString("DELETE_NOTE", comment: "Delete"), style: .destructive){action in
+                self.viewModel.deleteNote(at: indexPath.row)
+                tableView.reloadRows(at: [indexPath], with: .left)
                 
             }
-            return UISwipeActionsConfiguration(actions: [deleteConfirmAction])
-
+            alert.addAction(yesAction)
+            // ipad Compatibility, min req ios 16
+            alert.popoverPresentationController?.sourceItem = self.newNoteButton
+            self.newNoteButton.isHidden = false
+            self.present(alert, animated: true)
+            
+        }
+        return UISwipeActionsConfiguration(actions: [deleteConfirmAction])
+        
     }
     
 }

@@ -6,15 +6,26 @@
   
 */
 
+//Global
 "PLACEHOLDER_LABEL" = "";
-"HOME_SCREEN_LABEL" = "Home Screen";
 "NO_SCORE" = "-";
 "TBA_DATE" = "TBA";
 "UNKNOWN_DATE" = "TBA";
+"SAVE_TEXT" = "Kaydet";
+"CANCEL_TEXT" = "İptal";
+
+//Page Titles
+"POPULAR_GAMES" = "Popüler Oyunlar";
+"SEARCH_PAGE" = "Arama";
+"FAVORITES_PAGE" = "Favoriler";
+"NOTES_PAGE" = "Notlar";
 
 //Favorite Pages
-"REMOVE_FAVORITE" = "Remove";
+"REMOVE_FAVORITE" = "Kaldır";
 
 //Notes Page
-"PLACEHOLDER_NOTE" = "Enter your text here";
-"SELECT_BUTTON_TEXT" = "Select";
+"DELETE_NOTE" = "Notu Sil";
+"CONFIRM_DELETE_NOTE" = "Silmeyi Onayla";
+"PLACEHOLDER_NOTE_TITLE" = "Not Başlığı";
+"PLACEHOLDER_NOTE" = "Notunuzu Buraya Girebilirsiniz...";
+"SELECT_BUTTON_TEXT" = "Seçmek İçin Tıklayın";

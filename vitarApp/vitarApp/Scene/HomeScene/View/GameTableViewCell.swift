@@ -10,6 +10,7 @@ import Kingfisher
 
 final class GameTableViewCell: UITableViewCell {
 
+    //MARK: - Outlets and Variables
     @IBOutlet private weak var gameImage: UIImageView!
     @IBOutlet private weak var gameTitle: UILabel!
     @IBOutlet private weak var gameInfo: UILabel!
@@ -18,8 +19,27 @@ final class GameTableViewCell: UITableViewCell {
     @IBOutlet private weak var platformXbox: UIButton!
     @IBOutlet private weak var platformSony: UIButton!
     @IBOutlet private weak var platformNintendo: UIButton!
+    
+    
+    //MARK: - Lifecycle Functions
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        gameImage.layer.cornerRadius = 7.5
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        enablePlatform(id: -1)
+        gameImage.image = nil
+    }
 
     
+    //MARK: - Public Functions
     func configureCell(_ game:RawgModel){
         gameTitle.text = game.name
         gameInfo.text = gameInfoCreator(game)
@@ -31,6 +51,8 @@ final class GameTableViewCell: UITableViewCell {
         }
     }
     
+    
+    //MARK: - UI Helpers
     private func gameInfoCreator(_ game:RawgModel) -> String{
         let dateString = (game.tba ?? false) ? "TBA" : (game.released?.prefix(4) ?? "TBA")
         var genreString = ""
@@ -64,8 +86,10 @@ final class GameTableViewCell: UITableViewCell {
         }
     }
     
+    //MARK: - Private Functions
     private func changeImage(imgUrl:String?){
         //Server sided ImageResizing
+        //TODO: Global resizer
         if let imgUrl = imgUrl?.replacingOccurrences(of: "media/g", with: "media/resize/420/-/g"){
             guard let url = URL(string: imgUrl) else { return }
             DispatchQueue.main.async {
@@ -73,22 +97,5 @@ final class GameTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        gameImage.layer.cornerRadius = 7.5
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    override func prepareForReuse() {
-        enablePlatform(id: -1)
-        gameImage.image = nil
-    }
-    
 }
+//MARK: -

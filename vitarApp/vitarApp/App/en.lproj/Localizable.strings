@@ -6,15 +6,26 @@
   
 */
 
+//Global
 "PLACEHOLDER_LABEL" = "";
-"HOME_SCREEN_LABEL" = "Home Screen";
 "NO_SCORE" = "-";
 "TBA_DATE" = "TBA";
 "UNKNOWN_DATE" = "TBA";
+"SAVE_TEXT" = "Save";
+"CANCEL_TEXT" = "Cancel";
+
+//Page Titles
+"POPULAR_GAMES" = "Popular Games";
+"SEARCH_PAGE" = "Search";
+"FAVORITES_PAGE" = "Favorites";
+"NOTES_PAGE" = "Notes";
 
 //Favorite Pages
 "REMOVE_FAVORITE" = "Remove";
 
 //Notes Page
-"PLACEHOLDER_NOTE" = "Enter your text here";
-"SELECT_BUTTON_TEXT" = "Select";
+"DELETE_NOTE" = "Delete Note";
+"CONFIRM_DELETE_NOTE" = "DELETE";
+"PLACEHOLDER_NOTE_TITLE" = "Note Title";
+"PLACEHOLDER_NOTE" = "Enter your note here...";
+"SELECT_BUTTON_TEXT" = "Select Game";

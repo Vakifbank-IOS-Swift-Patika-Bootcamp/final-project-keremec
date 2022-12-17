@@ -10,10 +10,24 @@ import UIKit
 class NoteDetailSceneViewController: UIViewController {
 
     //MARK: - Outlets and Variables
-    @IBOutlet private weak var saveButton: UIButton!
+    @IBOutlet private weak var saveButton: UIButton!{
+        didSet{
+            saveButton.setTitle(NSLocalizedString("SAVE_TEXT", comment: "Save"), for: .normal)
+            saveButton.setTitle(NSLocalizedString("SAVE_TEXT", comment: "Save"), for: .disabled)
+        }
+    }
     
-    @IBOutlet private weak var noteTitle: UITextField!
+    @IBOutlet weak var cancelButton: UIButton!{
+        didSet{
+            cancelButton.setTitle(NSLocalizedString("CANCEL_TEXT", comment: "Cancel"), for: .normal)
+        }
+    }
     
+    @IBOutlet private weak var noteTitle: UITextField!{
+        didSet{
+            noteTitle.placeholder = NSLocalizedString("PLACEHOLDER_NOTE_TITLE", comment: "Note Title")
+        }
+    }
     @IBOutlet private weak var noteDetail: UITextView!{
         didSet{
             noteDetail.delegate = self
@@ -34,7 +48,7 @@ class NoteDetailSceneViewController: UIViewController {
         noteTitle.text = note?.noteTitle ?? ""
         noteDetail.text = note?.noteDetail ?? ""
         if noteDetail.text == ""{
-            noteDetail.text = NSLocalizedString("PLACEHOLDER_NOTE", comment: "Enter your text here")
+            noteDetail.text = NSLocalizedString("PLACEHOLDER_NOTE", comment: "Placeholder")
             noteDetail.textColor = UIColor.placeholderText
         }
         gameButton.setTitle(NSLocalizedString("SELECT_BUTTON_TEXT", comment: "Please Select Game"), for: .normal)
@@ -87,6 +101,7 @@ class NoteDetailSceneViewController: UIViewController {
     func setGame(game:RawgModel?, willValidate:Bool = true){
         if let game{
             self.game = game
+            gameButton.configuration = .filled()
             gameButton.setTitle(game.name, for: .normal)
             gameButton.setImage(UIImage(systemName: "gamecontroller.fill"), for: .normal)
         }

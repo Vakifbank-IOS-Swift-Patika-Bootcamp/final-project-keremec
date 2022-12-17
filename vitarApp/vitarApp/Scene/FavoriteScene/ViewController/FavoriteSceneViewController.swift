@@ -10,7 +10,7 @@ import UIKit
 
 class FavoriteSceneViewController: UIViewController {
     
-    
+    //MARK: - Outlets and Variables
     @IBOutlet private weak var favoriteListTableView: UITableView!{
         didSet{
             favoriteListTableView.delegate = self
@@ -22,8 +22,10 @@ class FavoriteSceneViewController: UIViewController {
     
     private var viewModel: FavoriteSceneViewModelProtocol = FavoriteSceneViewModel()
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = NSLocalizedString("FAVORITES_PAGE", comment: "Favorite Games")
         viewModel.delegate = self
         viewModel.fetchFavoriteGames()
         Globals.sharedInstance.isFavoriteChanged = false
@@ -35,6 +37,7 @@ class FavoriteSceneViewController: UIViewController {
         }
     }
     
+    //MARK: - Segue Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "FavoritetoDetail":
@@ -50,7 +53,7 @@ class FavoriteSceneViewController: UIViewController {
     
 }
 
-
+//MARK: - Delegate Functions
 
 extension FavoriteSceneViewController: FavoriteSceneViewModelDelegate {
     func favoritesLoaded() {
@@ -58,7 +61,7 @@ extension FavoriteSceneViewController: FavoriteSceneViewModelDelegate {
     }
 }
 
-
+//MARK: - Tableview Functions
 extension FavoriteSceneViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getGameCount()
@@ -84,8 +87,10 @@ extension FavoriteSceneViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("REMOVE_FAVORITE", comment: "Remove Favorite")){ (contextualAction, view, bool ) in
             self.viewModel.removeGame(at: indexPath.row)
+            tableView.reloadRows(at: [indexPath], with: .left)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
 }
+//MARK: -

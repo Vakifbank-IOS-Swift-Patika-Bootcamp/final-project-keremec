@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Protocols
 protocol FavoriteSceneViewModelProtocol {
     var delegate: FavoriteSceneViewModelDelegate? { get set }
     func fetchFavoriteGames()
@@ -20,16 +21,19 @@ protocol FavoriteSceneViewModelDelegate: AnyObject {
     func favoritesLoaded()
 }
 
-
+//MARK: - Classes
 final class FavoriteSceneViewModel: FavoriteSceneViewModelProtocol {
     weak var delegate: FavoriteSceneViewModelDelegate?
     private var favorites = [Favorite]()
     private var games: [RawgDetailModel]?
     
+    // First gets favorites from CoreData
+    // then fills the data asynchronously
     func fetchFavoriteGames() {
         Globals.sharedInstance.isFavoriteChanged = false
         games = [RawgDetailModel]()
         favorites = FavoriteCoreDataManager.shared.getFavorites()
+        favorites = favorites.reversed()
         var onQueue = favorites.count
         if favorites.count <= 0{
             delegate?.favoritesLoaded()

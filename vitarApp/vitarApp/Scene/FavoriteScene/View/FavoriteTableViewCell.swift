@@ -9,21 +9,15 @@ import UIKit
 
 class FavoriteTableViewCell: UITableViewCell {
     
-    
-
+    //MARK: - Outlets and Variables
     @IBOutlet private weak var gameImage: UIImageView!
-    
     @IBOutlet private weak var gameTitle: UILabel!
-    
     @IBOutlet private weak var publisherLabel: UILabel!
-    
     @IBOutlet private weak var ratingOutlet: UIButton!
-    
     @IBOutlet private weak var scoreOutlet: UIButton!
-    
     @IBOutlet private weak var dateOutlet: UIButton!
     
-    
+    //MARK: - Life Cycle Functions
     override func awakeFromNib() {
         super.awakeFromNib()
         gameImage.layer.cornerRadius = 7.5
@@ -39,7 +33,7 @@ class FavoriteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
+    //MARK: - Public Functions
     func configureCell(_ game:RawgDetailModel){
         gameTitle.text = game.name
         setPublisherLabel(game)
@@ -51,7 +45,7 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     
     
-
+    //MARK: - UI Helpers
     private func setGameRating(_ id: Int?){
         ratingOutlet.setTitle(Globals.sharedInstance.Esrb(id: id), for: .normal)
     }
@@ -92,8 +86,10 @@ class FavoriteTableViewCell: UITableViewCell {
         publisherLabel.text = "\(leadStudio), \(mainPublisher)"
     }
     
+    //MARK: - Private Functions
     private func changeImage(imgUrl:String?){
         //Server sided ImageResizing
+        //TODO: Global Image Resizer
         if let imgUrl = imgUrl?.replacingOccurrences(of: "media/g", with: "media/resize/420/-/g"){
             guard let url = URL(string: imgUrl) else { return }
             DispatchQueue.main.async {

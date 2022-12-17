@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Protocols
 protocol GameDetailSceneViewModelProtocol {
     var delegate: GameDetailSceneViewModelDelegate? { get set }
     func fetchGameDetail(_ id:Int)
@@ -28,7 +29,7 @@ protocol GameDetailSceneViewModelDelegate: AnyObject {
     func gameLoaded()
 }
 
-
+//MARK: - Classes
 final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
     weak var delegate: GameDetailSceneViewModelDelegate?
     private var game: RawgDetailModel?
@@ -127,6 +128,7 @@ final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
         FavoriteCoreDataManager.shared.isFavorite(id)
     }
     
+    //MARK: - Favorite Helpers
     private func likeGame() -> Bool {
         if let gameId = game?.id, let imageId = URL(string: game?.imageWide ?? "")?.lastPathComponent{
             guard FavoriteCoreDataManager.shared.saveFavorite(gameId: gameId, imageId: imageId) != nil else {return !true}
@@ -145,4 +147,4 @@ final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
         return !false
     }
 }
-
+//MARK: -

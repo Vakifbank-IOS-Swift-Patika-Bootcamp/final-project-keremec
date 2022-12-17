@@ -9,9 +9,9 @@ import UIKit
 
 class SearchSceneViewController: UIViewController {
     
+    //MARK: - Outlets and Variables
     var modalCall:Int?
     weak var delegateNote: NoteDetailSceneViewController?
-    
     @IBOutlet private weak var gameListTableView: UITableView!{
         didSet{
             gameListTableView.delegate = self
@@ -26,14 +26,16 @@ class SearchSceneViewController: UIViewController {
         }
     }
     
-    
     private var viewModel: HomeSceneViewModelProtocol = HomeSceneViewModel()
     
+    //MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = NSLocalizedString("SEARCH_PAGE", comment: "Search Games")
         viewModel.delegate = self
     }
     
+    //MARK: - Segue Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "SearchtoDetail":
@@ -45,17 +47,17 @@ class SearchSceneViewController: UIViewController {
             print("identifier not found")
         }
     }
-
 }
 
 
+//MARK: - Delegate Functions
 extension SearchSceneViewController: HomeSceneViewModelDelegate {
     func gamesLoaded() {
         gameListTableView.reloadData()
     }
 }
 
-
+//MARK: - Tableview Functions
 extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getGameCount()
@@ -69,7 +71,7 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource{
         }
         return cell
     }
-    
+    // Segue Actions - Tableview
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let modalCall{
             switch modalCall {

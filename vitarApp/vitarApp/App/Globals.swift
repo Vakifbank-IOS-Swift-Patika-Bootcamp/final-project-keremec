@@ -11,10 +11,18 @@ class Globals {
     static let sharedInstance = Globals()
     private init(){}
     
+    //MARK: - Settings
+    var isLocalColorCalculationEnabled = false
+    
+    //MARK: - States
+    
+    var isFirstLaunch = true
+    
     var isFavoriteChanged = false
     
     var isNotesChanged = false
     
+    //MARK: - Helpers
     func formatDate(date:String) -> String{
         return date.replacingOccurrences(of: "-", with: "/")
     }
@@ -40,6 +48,7 @@ class Globals {
         }
         return "NR"
     }
+    //MARK: -
     
 }
 
