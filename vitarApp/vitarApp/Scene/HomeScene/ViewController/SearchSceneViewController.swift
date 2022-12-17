@@ -10,7 +10,8 @@ import UIKit
 class SearchSceneViewController: UIViewController {
     
     var modalCall:Int?
-
+    weak var delegateNote: NoteDetailSceneViewController?
+    
     @IBOutlet private weak var gameListTableView: UITableView!{
         didSet{
             gameListTableView.delegate = self
@@ -73,8 +74,8 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource{
         if let modalCall{
             switch modalCall {
             case 1:
-                // Will used for notes
-                print("will used for notes")
+                delegateNote?.setGame(game: viewModel.getGame(at: indexPath.row))
+                dismiss(animated: true)
             default:
                 tableView.deselectRow(at: indexPath, animated: true)
             }

@@ -124,12 +124,12 @@ final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
     }
     
     func isFavoriteGame(_ id: Int) -> Bool? {
-        CoreDataManager.shared.isFavorite(id)
+        FavoriteCoreDataManager.shared.isFavorite(id)
     }
     
     private func likeGame() -> Bool {
         if let gameId = game?.id, let imageId = URL(string: game?.imageWide ?? "")?.lastPathComponent{
-            guard CoreDataManager.shared.saveFavorite(gameId: gameId, imageId: imageId) != nil else {return !true}
+            guard FavoriteCoreDataManager.shared.saveFavorite(gameId: gameId, imageId: imageId) != nil else {return !true}
             Globals.sharedInstance.isFavoriteChanged = true
             return true
         }
@@ -138,7 +138,7 @@ final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
     
     private func unlikeGame() -> Bool {
         if let gameId = game?.id{
-            guard CoreDataManager.shared.deleteFavoriteWithId(id: gameId) != nil else {return !false}
+            guard FavoriteCoreDataManager.shared.deleteFavoriteWithId(id: gameId) != nil else {return !false}
             Globals.sharedInstance.isFavoriteChanged = true
             return false
         }

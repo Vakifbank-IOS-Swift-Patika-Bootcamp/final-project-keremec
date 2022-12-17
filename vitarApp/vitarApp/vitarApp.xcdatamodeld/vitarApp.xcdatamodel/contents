@@ -4,4 +4,12 @@
         <attribute name="gameId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="imageId" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="gameId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gameTitle" optional="YES" attributeType="String"/>
+        <attribute name="imageId" optional="YES" attributeType="String"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="noteDetail" optional="YES" attributeType="String"/>
+        <attribute name="noteTitle" optional="YES" attributeType="String"/>
+    </entity>
 </model>

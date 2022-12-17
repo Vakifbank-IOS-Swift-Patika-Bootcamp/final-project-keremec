@@ -29,6 +29,13 @@
 		0C9917DC294742A8000E93F7 /* GetRawgResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D4294732FA000E93F7 /* GetRawgResponseModel.swift */; };
 		0C9917DD2947451B000E93F7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8888AF2943D4180094887A /* Secrets.swift */; };
 		0C9917DE2947452B000E93F7 /* RawgDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9917D629473C0C000E93F7 /* RawgDetailModel.swift */; };
+		0C9A1E3A294DC0920055E7A2 /* NoteSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9A1E39294DC0920055E7A2 /* NoteSceneViewModel.swift */; };
+		0C9A1E3C294DF8940055E7A2 /* NoteDetailSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9A1E3B294DF8940055E7A2 /* NoteDetailSceneViewModel.swift */; };
+		0C9A1E3E294E1C050055E7A2 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9A1E3D294E1C050055E7A2 /* NoteModel.swift */; };
+		0C9B2C9C294DABC7004DBC63 /* NoteSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B2C9B294DABC7004DBC63 /* NoteSceneViewController.swift */; };
+		0C9B2C9E294DABD7004DBC63 /* NoteDetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B2C9D294DABD7004DBC63 /* NoteDetailSceneViewController.swift */; };
+		0C9B2CA1294DAC15004DBC63 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B2C9F294DAC15004DBC63 /* NoteTableViewCell.swift */; };
+		0C9B2CA2294DAC15004DBC63 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B2CA0294DAC15004DBC63 /* NoteTableViewCell.xib */; };
 		0CAD6CA0294C68B200FA52CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8980B2943A714005A6B35 /* AppDelegate.swift */; };
 		0CB8980C2943A714005A6B35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8980B2943A714005A6B35 /* AppDelegate.swift */; };
 		0CB8980E2943A714005A6B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8980D2943A714005A6B35 /* SceneDelegate.swift */; };
@@ -85,6 +92,13 @@
 		0C9917D4294732FA000E93F7 /* GetRawgResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRawgResponseModel.swift; sourceTree = "<group>"; };
 		0C9917D629473C0C000E93F7 /* RawgDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawgDetailModel.swift; sourceTree = "<group>"; };
 		0C9917D829474240000E93F7 /* vitarAppRawgClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vitarAppRawgClientTest.swift; sourceTree = "<group>"; };
+		0C9A1E39294DC0920055E7A2 /* NoteSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSceneViewModel.swift; sourceTree = "<group>"; };
+		0C9A1E3B294DF8940055E7A2 /* NoteDetailSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailSceneViewModel.swift; sourceTree = "<group>"; };
+		0C9A1E3D294E1C050055E7A2 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		0C9B2C9B294DABC7004DBC63 /* NoteSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSceneViewController.swift; sourceTree = "<group>"; };
+		0C9B2C9D294DABD7004DBC63 /* NoteDetailSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailSceneViewController.swift; sourceTree = "<group>"; };
+		0C9B2C9F294DAC15004DBC63 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		0C9B2CA0294DAC15004DBC63 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		0CB898082943A714005A6B35 /* vitarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vitarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB8980B2943A714005A6B35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB8980D2943A714005A6B35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -368,6 +382,7 @@
 		0CB898622943C7A8005A6B35 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0C9A1E39294DC0920055E7A2 /* NoteSceneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -382,6 +397,8 @@
 		0CB898642943C7A8005A6B35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C9B2C9F294DAC15004DBC63 /* NoteTableViewCell.swift */,
+				0C9B2CA0294DAC15004DBC63 /* NoteTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -389,6 +406,7 @@
 		0CB898652943C7A8005A6B35 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0C9B2C9B294DABC7004DBC63 /* NoteSceneViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -407,6 +425,7 @@
 		0CB898682943C84E005A6B35 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0C9A1E3B294DF8940055E7A2 /* NoteDetailSceneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -414,6 +433,7 @@
 		0CB898692943C84E005A6B35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0C9A1E3D294E1C050055E7A2 /* NoteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -428,6 +448,7 @@
 		0CB8986B2943C84E005A6B35 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0C9B2C9D294DABD7004DBC63 /* NoteDetailSceneViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -545,6 +566,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9B2CA2294DAC15004DBC63 /* NoteTableViewCell.xib in Resources */,
 				0CB8981B2943A715005A6B35 /* LaunchScreen.storyboard in Resources */,
 				0CEE92C9294879E200B88175 /* GameTableViewCell.xib in Resources */,
 				0CB898772943CE68005A6B35 /* Localizable.strings in Resources */,
@@ -581,18 +603,24 @@
 				0CFA555C294A17D300893FD4 /* GameDetailSceneViewController.swift in Sources */,
 				0C40A7492949D67A0076E261 /* SearchSceneViewController.swift in Sources */,
 				0C9917D3294732ED000E93F7 /* RawgModel.swift in Sources */,
+				0C9B2C9E294DABD7004DBC63 /* NoteDetailSceneViewController.swift in Sources */,
+				0C9A1E3E294E1C050055E7A2 /* NoteModel.swift in Sources */,
 				0CEE92CC2948E4FB00B88175 /* HomeSceneViewModel.swift in Sources */,
 				0C9917D5294732FA000E93F7 /* GetRawgResponseModel.swift in Sources */,
 				0C8888B02943D4180094887A /* Secrets.swift in Sources */,
+				0C9A1E3C294DF8940055E7A2 /* NoteDetailSceneViewModel.swift in Sources */,
 				0CB898162943A714005A6B35 /* vitarApp.xcdatamodeld in Sources */,
 				0C43DFE4294BA51600AE508A /* Globals.swift in Sources */,
 				0C43DFD7294B5F9800AE508A /* FavoriteSceneViewController.swift in Sources */,
+				0C9A1E3A294DC0920055E7A2 /* NoteSceneViewModel.swift in Sources */,
 				0C9917D729473C0C000E93F7 /* RawgDetailModel.swift in Sources */,
 				0CB898102943A714005A6B35 /* HomeSceneViewController.swift in Sources */,
 				0CB8980C2943A714005A6B35 /* AppDelegate.swift in Sources */,
+				0C9B2CA1294DAC15004DBC63 /* NoteTableViewCell.swift in Sources */,
 				0CB8986F2943CC63005A6B35 /* RawgClient.swift in Sources */,
 				0C43DFE1294B74FD00AE508A /* FavoriteSceneViewModel.swift in Sources */,
 				0C43DFDC294B600300AE508A /* FavoriteTableViewCell.swift in Sources */,
+				0C9B2C9C294DABC7004DBC63 /* NoteSceneViewController.swift in Sources */,
 				0CB8986D2943C97F005A6B35 /* CoreDataManager.swift in Sources */,
 				0CFA555F294A1B3000893FD4 /* GameDetailSceneViewModel.swift in Sources */,
 				0CB8980E2943A714005A6B35 /* SceneDelegate.swift in Sources */,
