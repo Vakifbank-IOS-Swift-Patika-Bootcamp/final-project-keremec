@@ -37,6 +37,7 @@ class HomeSceneViewController: UIViewController {
         viewModel.delegate = self
         activityIndicator.startAnimating()
         viewModel.fetchPopularGames()
+        LocalNotificationManager.shared.missUserNotification(day: 2)
     }
     
     //MARK: - Segue Functions

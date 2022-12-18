@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Globals {
+final class Globals {
     static let sharedInstance = Globals()
     private init(){}
     
