@@ -17,6 +17,15 @@
         "branch" : "master",
         "revision" : "3e091ee962391a2ddcae5b18e17bc625f9d88d6e"
       }
+    },
+    {
+      "identity" : "uiimagecolors",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jathu/UIImageColors.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f064be8ee0b03158e61135e6c384aee18d7a5414"
+      }
     }
   ],
   "version" : 2

@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import UIImageColors
 
 class GameDetailSceneViewController: UIViewController {
     
     //MARK: - Outlets and Variables
 
     
+    @IBOutlet weak var backgroundContainer: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var gameImageView: UIImageView!{
         didSet{
@@ -109,6 +111,35 @@ class GameDetailSceneViewController: UIViewController {
         likeGameOutlet.isHidden = true
         return
     }
+    
+    
+    private func colorPage(){
+        backgroundContainer.isHidden = false
+        DispatchQueue.main.async {
+            self.gameImageView.image?.getColors{colors in
+                UIView.transition(with: self.view, duration: 0.25, options: .transitionCrossDissolve) {
+                    self.publisherLabel.textColor = colors?.detail
+                    self.titleLabel.textColor = colors?.primary
+                    self.infoLabel.textColor = colors?.secondary
+                    self.detailText.textColor = colors?.detail
+                    
+                    self.likeGameOutlet.tintColor = colors?.primary
+                    
+                    self.ratingOutlet.tintColor = colors?.primary
+                    let tempDate = self.dateOutlet.titleLabel?.text
+                    self.dateOutlet.tintColor = colors?.primary
+                    self.dateOutlet.titleLabel?.text = tempDate
+                    self.scoreOutlet.tintColor = colors?.primary
+                    self.platformPC.tintColor = colors?.primary
+                    self.platformXbox.tintColor = colors?.primary
+                    self.platformSony.tintColor = colors?.primary
+                    self.platformNintendo.tintColor = colors?.primary
+                    
+                    self.view.backgroundColor = colors?.background
+                }
+            }
+        }
+    }
 }
 
 //MARK: - Delegate Functions
@@ -142,6 +173,10 @@ extension GameDetailSceneViewController: GameDetailSceneViewModelDelegate{
                     self.enablePlatform(id: i.platform?.id ?? 0)
                 }
             }
+            if(Globals.sharedInstance.isLocalColorCalculationEnabled){
+                self.colorPage()
+            }
+            
             
         }
         activityIndicator.stopAnimating()

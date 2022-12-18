@@ -44,7 +44,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Popular Games" id="Zle-VP-Nc6">
-                        <barButtonItem key="rightBarButtonItem" image="line.horizontal.3.decrease" catalog="system" style="plain" id="tkf-AZ-JTr">
+                        <barButtonItem key="rightBarButtonItem" image="line.3.horizontal.decrease" catalog="system" style="plain" id="tkf-AZ-JTr">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="orderListAction:" destination="BYZ-38-t0r" id="E18-hV-ADk"/>
@@ -70,6 +70,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSe-oa-3W6">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3oF-kh-pxA">
                                 <rect key="frame" x="22.666666666666657" y="83.999999999999986" width="348" height="195.66666666666663"/>
                                 <constraints>
@@ -167,7 +171,7 @@
                                     <action selector="pressLikeGame:" destination="2G6-kQ-Ky9" eventType="touchUpInside" id="eNf-Tu-Hjp"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gH8-h8-TsE">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gH8-h8-TsE">
                                 <rect key="frame" x="0.0" y="59" width="393" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </activityIndicatorView>
@@ -180,10 +184,12 @@
                             <constraint firstItem="gH8-h8-TsE" firstAttribute="top" secondItem="cMD-2N-0bs" secondAttribute="top" id="17c-qy-bpb"/>
                             <constraint firstItem="3oF-kh-pxA" firstAttribute="trailing" secondItem="pdY-8F-9ZZ" secondAttribute="trailing" constant="6" id="1T3-e5-qWh"/>
                             <constraint firstItem="cMD-2N-0bs" firstAttribute="trailing" secondItem="gH8-h8-TsE" secondAttribute="trailing" id="1ej-NG-WDj"/>
+                            <constraint firstItem="pSe-oa-3W6" firstAttribute="leading" secondItem="cMD-2N-0bs" secondAttribute="leading" id="2sj-5u-p1Q"/>
                             <constraint firstItem="JBu-ry-0V1" firstAttribute="leading" secondItem="cMD-2N-0bs" secondAttribute="leading" constant="15" id="3KK-GD-MMm"/>
                             <constraint firstItem="3oF-kh-pxA" firstAttribute="top" secondItem="cMD-2N-0bs" secondAttribute="top" constant="25" id="4wH-d5-UWX"/>
                             <constraint firstItem="xYm-VL-UYj" firstAttribute="top" secondItem="6ip-g5-V2n" secondAttribute="bottom" constant="20" id="6rW-0e-JiF"/>
                             <constraint firstItem="cMD-2N-0bs" firstAttribute="trailing" secondItem="6ip-g5-V2n" secondAttribute="trailing" constant="20" id="9L6-mX-0nv"/>
+                            <constraint firstItem="pSe-oa-3W6" firstAttribute="trailing" secondItem="cMD-2N-0bs" secondAttribute="trailing" id="C0b-ci-7jr"/>
                             <constraint firstItem="6ip-g5-V2n" firstAttribute="leading" secondItem="cMD-2N-0bs" secondAttribute="leading" constant="20" id="ElQ-9J-ZjS"/>
                             <constraint firstItem="3oF-kh-pxA" firstAttribute="centerX" secondItem="H5L-e8-Ex9" secondAttribute="centerX" id="FHt-Zn-Nfi"/>
                             <constraint firstItem="cMD-2N-0bs" firstAttribute="trailing" secondItem="RwF-2g-cOg" secondAttribute="trailing" constant="25" id="KAa-pf-Jhc"/>
@@ -196,9 +202,11 @@
                             <constraint firstItem="cMD-2N-0bs" firstAttribute="bottom" secondItem="gH8-h8-TsE" secondAttribute="bottom" id="a40-qA-Z9k"/>
                             <constraint firstItem="yZM-CM-OOu" firstAttribute="top" secondItem="RwF-2g-cOg" secondAttribute="bottom" constant="15" id="bKZ-Cg-tck"/>
                             <constraint firstItem="RwF-2g-cOg" firstAttribute="top" secondItem="3oF-kh-pxA" secondAttribute="bottom" constant="5" id="bND-Er-JfO"/>
+                            <constraint firstItem="pSe-oa-3W6" firstAttribute="bottom" secondItem="H5L-e8-Ex9" secondAttribute="bottom" id="jfc-xm-b7N"/>
                             <constraint firstItem="cMD-2N-0bs" firstAttribute="trailing" secondItem="xYm-VL-UYj" secondAttribute="trailing" constant="15" id="kt3-Zx-DSr"/>
                             <constraint firstItem="yZM-CM-OOu" firstAttribute="leading" secondItem="cMD-2N-0bs" secondAttribute="leading" constant="15" id="lMu-k7-TCB"/>
                             <constraint firstItem="JBu-ry-0V1" firstAttribute="top" secondItem="yZM-CM-OOu" secondAttribute="bottom" constant="7" id="lwV-i3-n0H"/>
+                            <constraint firstItem="pSe-oa-3W6" firstAttribute="top" secondItem="H5L-e8-Ex9" secondAttribute="top" id="ntg-uG-Tv4"/>
                             <constraint firstItem="cMD-2N-0bs" firstAttribute="trailing" secondItem="JBu-ry-0V1" secondAttribute="trailing" constant="15" id="usF-dq-Gsp"/>
                             <constraint firstItem="i2q-PH-szW" firstAttribute="top" secondItem="xYm-VL-UYj" secondAttribute="bottom" constant="10" id="wnP-Ut-yzt"/>
                             <constraint firstItem="6ip-g5-V2n" firstAttribute="top" secondItem="JBu-ry-0V1" secondAttribute="bottom" constant="15" id="yE2-el-bk4"/>
@@ -206,6 +214,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="gH8-h8-TsE" id="Uyi-F3-dac"/>
+                        <outlet property="backgroundContainer" destination="pSe-oa-3W6" id="DJn-MK-Nka"/>
                         <outlet property="dateOutlet" destination="WNv-eR-cy7" id="it9-9e-EeT"/>
                         <outlet property="detailText" destination="xYm-VL-UYj" id="Dfw-52-4d1"/>
                         <outlet property="gameImageView" destination="3oF-kh-pxA" id="k8h-Kf-uxx"/>
@@ -223,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piS-Fz-Jc6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="1643"/>
+            <point key="canvasLocation" x="2429.770992366412" y="1642.9577464788733"/>
         </scene>
         <!--Search-->
         <scene sceneID="zex-rF-buQ">
@@ -448,7 +457,7 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system">
+                                <buttonConfiguration key="configuration" style="tinted" image="plus" catalog="system">
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -599,7 +608,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="NXe-LY-LNf"/>
         <segue reference="3Cp-o3-nsU"/>
-        <segue reference="iW9-Vi-Afs"/>
+        <segue reference="oOQ-vs-w3z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
@@ -609,7 +618,7 @@
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
+        <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="n.square.fill" catalog="system" width="128" height="114"/>
         <image name="note" catalog="system" width="128" height="107"/>
@@ -629,6 +638,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
