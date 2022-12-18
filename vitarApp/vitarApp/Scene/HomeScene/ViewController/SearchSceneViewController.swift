@@ -12,6 +12,14 @@ class SearchSceneViewController: UIViewController {
     //MARK: - Outlets and Variables
     var modalCall:Int?
     weak var delegateNote: NoteDetailSceneViewController?
+
+        
+    @IBOutlet weak var searchStatusLabel: UILabel!{
+        didSet{
+            statusHelper(0)
+        }
+    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var gameListTableView: UITableView!{
         didSet{
             gameListTableView.delegate = self
@@ -47,6 +55,26 @@ class SearchSceneViewController: UIViewController {
             print("identifier not found")
         }
     }
+    //MARK: - Helper Action
+    private func statusHelper(_ status:Int){
+        searchStatusLabel.tag = status
+        switch status {
+        case 0:
+            searchStatusLabel.text = NSLocalizedString("CAN_SEARCH_GAME", comment: "You can Search Game")
+            searchStatusLabel.isHidden = false
+        case 1:
+            searchStatusLabel.isHidden = true
+            activityIndicator.startAnimating()
+        case 2:
+            searchStatusLabel.text = NSLocalizedString("NO_RESULT", comment: "No Result")
+            searchStatusLabel.isHidden = false
+        case 3:
+            searchStatusLabel.isHidden = true
+        default:
+            searchStatusLabel.isHidden = true
+            searchStatusLabel.text = ""
+        }
+    }
 }
 
 
@@ -54,13 +82,24 @@ class SearchSceneViewController: UIViewController {
 extension SearchSceneViewController: HomeSceneViewModelDelegate {
     func gamesLoaded() {
         gameListTableView.reloadData()
+        activityIndicator.stopAnimating()
     }
 }
 
 //MARK: - Tableview Functions
 extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getGameCount()
+        let count = viewModel.getGameCount()
+        if searchStatusLabel.tag == 0{
+            statusHelper(0)
+        }
+        else if count <= 0 {
+            statusHelper(2)
+        }
+        else{
+            statusHelper(3)
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,6 +135,7 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource{
 extension SearchSceneViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text{
+            statusHelper(1)
             viewModel.searchGames(text)
             self.view.endEditing(true)
         }

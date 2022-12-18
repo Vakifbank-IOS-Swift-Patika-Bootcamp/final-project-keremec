@@ -10,6 +10,15 @@ import UIKit
 class NoteSceneViewController: UIViewController {
     
     //MARK: - Outlets and Variables
+    
+    
+    @IBOutlet weak var statusLabel: UILabel!{
+        didSet{
+            statusLabel.text = NSLocalizedString("ZERO_NOTE", comment: "You dont have any note")
+            statusLabel.isHidden = true
+        }
+    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var newNoteButton: UIButton!
     @IBOutlet private weak var noteListTableView: UITableView!{
         didSet{
@@ -28,6 +37,7 @@ class NoteSceneViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("NOTES_PAGE", comment: "Notes Page")
         viewModel.delegate = self
+        activityIndicator.startAnimating()
         viewModel.fetchNotes()
     }
     
@@ -65,13 +75,21 @@ class NoteSceneViewController: UIViewController {
 //MARK: - Delegate Functions
 extension NoteSceneViewController: NoteSceneViewModelDelegate {
     func notesLoaded() {
+        activityIndicator.stopAnimating()
         noteListTableView.reloadData()
     }
 }
 //MARK: - Tableview Functions
 extension NoteSceneViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getNoteCount()
+        let count = viewModel.getNoteCount()
+        if count <= 0{
+            statusLabel.isHidden = false
+        }
+        else{
+            statusLabel.isHidden = true
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

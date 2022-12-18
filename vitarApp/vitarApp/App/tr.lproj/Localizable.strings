@@ -20,8 +20,13 @@
 "FAVORITES_PAGE" = "Favoriler";
 "NOTES_PAGE" = "Notlar";
 
-//Favorite Pages
+//Search Page
+"CAN_SEARCH_GAME" = "Arama çubuğunu kullanabilirsiniz";
+"NO_RESULT" = "Sonuç Yok";
+
+//Favorite Page
 "REMOVE_FAVORITE" = "Kaldır";
+"NO_FAVORITE" = "Favori Listeniz Boş";
 
 //Notes Page
 "DELETE_NOTE" = "Notu Sil";
@@ -29,3 +34,4 @@
 "PLACEHOLDER_NOTE_TITLE" = "Not Başlığı";
 "PLACEHOLDER_NOTE" = "Notunuzu Buraya Girebilirsiniz...";
 "SELECT_BUTTON_TEXT" = "Seçmek İçin Tıklayın";
+"ZERO_NOTE" = "Hiç Notunuz Yok";

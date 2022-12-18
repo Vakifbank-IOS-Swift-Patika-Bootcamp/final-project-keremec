@@ -11,6 +11,8 @@ class HomeSceneViewController: UIViewController {
     
     //MARK: - Outlets and Variables
     var orderCase = 0
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var orderButtonOutlet: UIBarButtonItem!
     @IBOutlet private weak var gameListTableView: UITableView! {
         didSet{
@@ -28,6 +30,7 @@ class HomeSceneViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("POPULAR_GAMES", comment: "Popular Games")
         viewModel.delegate = self
+        activityIndicator.startAnimating()
         viewModel.fetchPopularGames()
     }
     
@@ -71,6 +74,7 @@ class HomeSceneViewController: UIViewController {
 extension HomeSceneViewController: HomeSceneViewModelDelegate {
     func gamesLoaded() {
         gameListTableView.reloadData()
+        activityIndicator.stopAnimating()
     }
 }
 //MARK: - Tableview Functions

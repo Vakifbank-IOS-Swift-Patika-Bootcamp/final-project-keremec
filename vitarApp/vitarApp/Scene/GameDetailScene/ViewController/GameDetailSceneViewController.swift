@@ -11,6 +11,8 @@ class GameDetailSceneViewController: UIViewController {
     
     //MARK: - Outlets and Variables
 
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var gameImageView: UIImageView!{
         didSet{
             gameImageView.layer.cornerRadius = 7.5
@@ -52,6 +54,7 @@ class GameDetailSceneViewController: UIViewController {
         super.viewDidLoad()
         guard let id = gameId else { return }
         viewModel.delegate = self
+        activityIndicator.startAnimating()
         viewModel.fetchGameDetail(id)
     }
     
@@ -138,6 +141,7 @@ extension GameDetailSceneViewController: GameDetailSceneViewModelDelegate{
             }
             
         }
+        activityIndicator.stopAnimating()
     }
     
     

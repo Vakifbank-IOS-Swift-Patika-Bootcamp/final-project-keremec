@@ -20,8 +20,13 @@
 "FAVORITES_PAGE" = "Favorites";
 "NOTES_PAGE" = "Notes";
 
-//Favorite Pages
+//Search Page
+"CAN_SEARCH_GAME" = "You can use the searchbar";
+"NO_RESULT" = "No Result";
+
+//Favorite Page
 "REMOVE_FAVORITE" = "Remove";
+"NO_FAVORITE" = "You don't have any Favorites";
 
 //Notes Page
 "DELETE_NOTE" = "Delete Note";
@@ -29,3 +34,4 @@
 "PLACEHOLDER_NOTE_TITLE" = "Note Title";
 "PLACEHOLDER_NOTE" = "Enter your note here...";
 "SELECT_BUTTON_TEXT" = "Select Game";
+"ZERO_NOTE" = "You don't have any Note";

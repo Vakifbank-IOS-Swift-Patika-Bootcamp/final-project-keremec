@@ -11,6 +11,15 @@ import UIKit
 class FavoriteSceneViewController: UIViewController {
     
     //MARK: - Outlets and Variables
+    
+    
+    @IBOutlet weak var statusLabel: UILabel!{
+        didSet{
+            statusLabel.text = NSLocalizedString("NO_FAVORITE", comment: "You don't Have Favorite")
+            statusLabel.isHidden = true
+        }
+    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var favoriteListTableView: UITableView!{
         didSet{
             favoriteListTableView.delegate = self
@@ -27,12 +36,14 @@ class FavoriteSceneViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("FAVORITES_PAGE", comment: "Favorite Games")
         viewModel.delegate = self
+        activityIndicator.startAnimating()
         viewModel.fetchFavoriteGames()
         Globals.sharedInstance.isFavoriteChanged = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if Globals.sharedInstance.isFavoriteChanged{
+            activityIndicator.startAnimating()
             viewModel.fetchFavoriteGames()
         }
     }
@@ -58,13 +69,21 @@ class FavoriteSceneViewController: UIViewController {
 extension FavoriteSceneViewController: FavoriteSceneViewModelDelegate {
     func favoritesLoaded() {
         favoriteListTableView.reloadData()
+        activityIndicator.stopAnimating()
     }
 }
 
 //MARK: - Tableview Functions
 extension FavoriteSceneViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getGameCount()
+        let count = viewModel.getGameCount()
+        if count <= 0{
+            statusLabel.isHidden = false
+        }
+        else {
+            statusLabel.isHidden = true
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
