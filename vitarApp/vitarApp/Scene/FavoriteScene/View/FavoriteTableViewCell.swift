@@ -37,7 +37,7 @@ class FavoriteTableViewCell: UITableViewCell {
     func configureCell(_ game:RawgDetailModel){
         gameTitle.text = game.name
         setPublisherLabel(game)
-        setGameRating(game.id)
+        setGameRating(game.rating?.id)
         setGameScore(metacritic: game.metacritic)
         setGameDate(game)
 
