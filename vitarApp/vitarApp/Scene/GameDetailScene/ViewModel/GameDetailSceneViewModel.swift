@@ -37,13 +37,16 @@ final class GameDetailSceneViewModel: GameDetailSceneViewModelProtocol {
     func fetchGameDetail(_ id:Int){
         RawgClient.getGameDetail(gameId: id) { [weak self] game, error in
             guard let self = self else { return }
+            if game?.id == nil{
+                NotificationCenter.default.post(name: NSNotification.Name("detailGamesErrorMessage"), object: NSLocalizedString("FETCH_ERROR", comment: "Game Data Fetch Error"))
+            }
             self.game = game
             self.delegate?.gameLoaded()
         }
     }
     
     func getGameImageUrl(_ size:Int) -> URL? {
-        return URL(string: game?.imageWide?.replacingOccurrences(of: "media/g", with: "media/resize/\(size)/-/g") ?? "")
+        return URL(string: Globals.sharedInstance.resizeImageRemote(imgUrl: game?.imageWide, size: size) ?? "")
     }
     
     func getGamePublisher() -> String? {

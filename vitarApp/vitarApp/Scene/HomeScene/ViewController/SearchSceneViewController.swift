@@ -40,6 +40,10 @@ class SearchSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("SEARCH_PAGE", comment: "Search Games")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleError),
+                                               name: NSNotification.Name("searchGamesErrorMessage"),
+                                               object: nil)
         viewModel.delegate = self
     }
     

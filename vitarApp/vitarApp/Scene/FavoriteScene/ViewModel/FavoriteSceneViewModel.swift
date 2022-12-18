@@ -44,6 +44,11 @@ final class FavoriteSceneViewModel: FavoriteSceneViewModelProtocol {
             RawgClient.getGameDetail(gameId: Int(i.element.gameId)) { [weak self] game, error in
                 guard let self = self else { return }
                 if let game{
+                    if game.id == nil{
+                        self.favorites.removeAll()
+                        NotificationCenter.default.post(name: NSNotification.Name("favoriteGamesErrorMessage"), object: NSLocalizedString("FETCH_ERROR", comment: "Game Data Fetch Error"))
+                        return
+                    }
                     self.games?[i.offset] = game
                     onQueue -= 1
                     if(onQueue <= 0){

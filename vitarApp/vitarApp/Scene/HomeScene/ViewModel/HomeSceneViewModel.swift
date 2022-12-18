@@ -31,6 +31,11 @@ final class HomeSceneViewModel: HomeSceneViewModelProtocol {
     func fetchPopularGames() {
         RawgClient.getPopularGames { [weak self] games, error in
             guard let self = self else { return }
+            if let error{
+                NotificationCenter.default.post(name: NSNotification.Name("popularGamesErrorMessage"), object: error.localizedDescription)
+                self.delegate?.gamesLoaded()
+                return
+            }
             self.games = games
             self.tempGames = games
             self.delegate?.gamesLoaded()
@@ -40,6 +45,11 @@ final class HomeSceneViewModel: HomeSceneViewModelProtocol {
     func searchGames(_ keyword: String) {
         RawgClient.searchGames(gameName: keyword) { [weak self] games, error in
             guard let self = self else { return }
+            if let error{
+                NotificationCenter.default.post(name: NSNotification.Name("searchGamesErrorMessage"), object: error.localizedDescription)
+                self.delegate?.gamesLoaded()
+                return
+            }
             self.games = games
             self.tempGames = games
             self.delegate?.gamesLoaded()

@@ -27,6 +27,10 @@ class Globals {
         return date.replacingOccurrences(of: "-", with: "/")
     }
     
+    func resizeImageRemote(imgUrl:String?, size:Int) -> String?{
+        return imgUrl?.replacingOccurrences(of: "media/g", with: "media/resize/\(size)/-/g")
+    }
+    
     func Esrb (id:Int?) -> String{
         if let ratingId = id {
             switch ratingId {

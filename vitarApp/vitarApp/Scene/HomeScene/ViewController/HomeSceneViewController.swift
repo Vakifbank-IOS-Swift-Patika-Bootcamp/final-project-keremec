@@ -29,6 +29,11 @@ class HomeSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("POPULAR_GAMES", comment: "Popular Games")
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleError),
+                                               name: NSNotification.Name("popularGamesErrorMessage"),
+                                               object: nil)
         viewModel.delegate = self
         activityIndicator.startAnimating()
         viewModel.fetchPopularGames()
@@ -82,7 +87,7 @@ extension HomeSceneViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getGameCount()
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as? GameTableViewCell,
               let obj = viewModel.getGame(at: indexPath.row) else {return UITableViewCell()}

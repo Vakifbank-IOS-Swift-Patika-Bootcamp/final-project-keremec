@@ -53,6 +53,10 @@ class GameDetailSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let id = gameId else { return }
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleError),
+                                               name: NSNotification.Name("detailGamesErrorMessage"),
+                                               object: nil)
         viewModel.delegate = self
         activityIndicator.startAnimating()
         viewModel.fetchGameDetail(id)
@@ -66,7 +70,6 @@ class GameDetailSceneViewController: UIViewController {
             }
         }
     }
-    
     //MARK: - Actions
     @IBAction func pressLikeGame(_ sender: Any) {
         favoriteHandler(status: viewModel.handleFavorite())
