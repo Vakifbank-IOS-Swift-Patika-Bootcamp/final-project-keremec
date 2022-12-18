@@ -64,6 +64,6 @@ iPhone:
 https://streamable.com/5sacfh
 
 iPad:
-https://streamable.com/uw4a0m
+https://streamable.com/awdcvo
 
 </div>
