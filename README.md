@@ -1,59 +1,69 @@
-# final-project
+# vitarApp
 
-Vakıfbank IOS Swift Bootcamp Bitirme Projesi
 
-Genel Detaylar:
-3 ana ekrandan oluşan public API tabanlı bir uygulaması yapılması beklenmektedir.(API
-sonradan kararlaştırılacaktır.)
-Aşağıda yazılmış olan tüm maddeler ideal uygulamayı tarif etmekle beraber; herkes
-başardığı özelliklere göre değerlendirilecektir.
-Yapılmış maddelerin başarılı uygulanmış olması tüm maddeleri tamamlamaktan daha
-önemlidir.
-Git Kullanımı:
-- Uygulama github.com sayfasına public repo olarak yüklenmelidir.
-- Git commitleri atomic olmalı ve genel commit mesajları kurallarına dikkat
-edilmelidir. - Commit mesajları atılırken branch yapısına dikkat edilmelidir.
-(Develop, Feature vb. branch’ler oluşturulmalıdır.)
-1. Ekran: (Liste Ekranı)
-- MVVM pattern’i ile yazılmalıdır.
-- Item’lar arasında arama yapılabilmelidir.
-- Item’ları sıralama butonu ile sıralanabilmelidir.
-- Sadece item’lar güncellendiğinde görünüm güncellenmelidir. (Ekrana her
-girişte güncelleme olmamalı)
-2. Ekran: (Detay Ekranı)
-- MVVM pattern’i ile yazılmalıdır.
-- Item’a basıldığında ilgili detaya yönlenmelidir.(Alanlar belirtilecektir.)
-- Edit işlemleri için aynı ekran kullanılacaktır.
-- Düzenlemede tüm alanlar eklenmemişse item kaydedilmemelidir.
-3. Ekran: (Yeni Giriş Ekranı)
-- MVVM pattern’i ile yazılmalıdır.
-- Ekran present şekilde açılmalıdır.
-- Ekleme tüm alanlar eklenmemişse item kaydedilmemelidir.
-Uygulama gereklilikleri:
-- SPM veya Cocoapods kullanılmalıdır.
-- Uygulamada hata mesajları ve bekleme esnasında activity indicator
+<div align="center">
 
-kullanılmalıdır.. - İşlemler CoreData ile yapılmalıdır.
-- CoreData’ya bir CoreDataManager üzerinden erişilmelidir.
-- Local push entegrasyonu sağlanmalıdır.
-- Notification yönetimi bir localNotificationManager aracılığıyla
-yapılmalıdır. - Localization sağlanmalıdır.
-- ViewModel localNotificationManager’a notificationManager protokolü üzerinden
-erişmelidir.
-- Uygulamanın unit test yaklaşımı ve coverage yüzdesi değerlendirme kriterleri
-arasındadır.
-- UI ve animasyon tamamen tercihe bağlı olup farklı cihaz görünümleri
-gözetilmelidir.
+  <img src="logo.png" alt="logo" width="200" height="auto" />
+  <h1>Vitar App</h1>
+  
+  <p>
+    Popüler oyunlar ve arama sekmesinden favorilerinize eklediğiniz oyunları görüntüleyebildiğiniz, oyunlara özel notlar ekleyebildiğiniz bir oyun takip uygulaması. Rawg.io API kullanılmıştır. UIKit ve MVVM pattern ile yazılmıştır.
+  </p>
+  
+</div>
 
-1- API - https://rawg.io/apidocs - Dokümantasyon Chrome ile açılmalıdır.
-2- Git reposu public gözüküyor ancak ödevler nasıl yükleniyorsa aynı sistem kullanılacaktır.
-3- ReadMe dosyası repoda olmalıdır.
-4- Liste ekranı için istenilen filtre kullanılabilir(2022 de çıkan oyunlar, platforma özel
-oyunlar veya popüler oyunlar olabilir.)
-5- Detay ekranında Fotoğraf ve en az 4 bilgi olacak.
-6- Listeden detaya gidildiğinde favorilere ekleme olacak başka bir editleme olmayacak.(2.
-Ekrandaki editleme maddesi)
-7- Favorilerin listelendiği bir ekran olacak.
-8- Liste şeklinde Notlar ekranı olacak. Oyunlara ait not ekleyebileceğim ve mevcut notları
-düzenleyebileceğim.(Dokümandaki 3. Ekran Yeni giriş ekranı bu kısımda olacak)
-9- Hatalar yakalanmalı ve alert şeklinde gösterilmelidir.
+<br />
+
+  
+
+<!-- About the Project -->
+## :star2: Proje Hakkında
+
+<div align="left"> 
+Xcode 14.1 ve iOS 16.1 ile test edilmiştir. Minimum iOS 16'da çalışır.
+</div>
+
+
+
+<!-- Prerequisites -->
+### :package: Gereksinimler
+
+
+```
+ Alamofire
+ Kingfisher
+ UIImageColors
+```
+
+<!-- Contact -->
+## :raising_hand_man: İletişim
+
+Kerem Safa Dirican
+
+Linkedin: https://www.linkedin.com/in/kerem-safa-dirican/
+
+
+<!-- Demo -->
+## :iphone: Ekran Görüntüleri
+
+<div align="center"> 
+
+![sss](https://user-images.githubusercontent.com/50713500/208315361-2e281e6d-08c1-45a7-bcac-9d38e2daf8c9.png)
+
+
+</div>
+
+
+
+<!-- Demo -->
+## :gem: Video
+
+<div align="center"> 
+
+iPhone:
+https://streamable.com/5sacfh
+
+iPad:
+https://streamable.com/uw4a0m
+
+</div>
