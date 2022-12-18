@@ -42,7 +42,10 @@ final class NoteSceneViewModel: NoteSceneViewModelProtocol {
     }
     
     func getNote(at index: Int) -> Note? {
-        notes[index]
+        if index > notes.count - 1{
+            return nil
+        }
+        return notes[index]
     }
     
     func deleteNote(at index:Int){
@@ -57,12 +60,18 @@ final class NoteSceneViewModel: NoteSceneViewModelProtocol {
     }
     
     func getGameId(at index: Int) -> Int? {
-        Int(notes[index].gameId)
+        if index > notes.count - 1{
+            return nil
+        }
+        return Int(notes[index].gameId)
     }
     
     
     func getGameImageID(at index: Int) -> String? {
-        notes[index].imageId
+        if index > notes.count - 1{
+            return nil
+        }
+        return notes[index].imageId
     }
 }
 //MARK: -
