@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0785B1294F1E0E0070B586 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0785B0294F1E0E0070B586 /* Extensions.swift */; };
 		0C40A7492949D67A0076E261 /* SearchSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C40A7482949D67A0076E261 /* SearchSceneViewController.swift */; };
 		0C43DFD7294B5F9800AE508A /* FavoriteSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C43DFD6294B5F9800AE508A /* FavoriteSceneViewController.swift */; };
 		0C43DFD8294B5F9800AE508A /* FavoriteSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C43DFD6294B5F9800AE508A /* FavoriteSceneViewController.swift */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0785B0294F1E0E0070B586 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0C40A7482949D67A0076E261 /* SearchSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneViewController.swift; sourceTree = "<group>"; };
 		0C43DFD6294B5F9800AE508A /* FavoriteSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSceneViewController.swift; sourceTree = "<group>"; };
 		0C43DFDA294B600300AE508A /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				0CB8980B2943A714005A6B35 /* AppDelegate.swift */,
+				0C0785B0294F1E0E0070B586 /* Extensions.swift */,
 				0CB8980D2943A714005A6B35 /* SceneDelegate.swift */,
 				0C8888AF2943D4180094887A /* Secrets.swift */,
 				0C43DFE3294BA51600AE508A /* Globals.swift */,
@@ -600,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CB898712943CCAF005A6B35 /* LocalNotificationManager.swift in Sources */,
+				0C0785B1294F1E0E0070B586 /* Extensions.swift in Sources */,
 				0CFA555C294A17D300893FD4 /* GameDetailSceneViewController.swift in Sources */,
 				0C40A7492949D67A0076E261 /* SearchSceneViewController.swift in Sources */,
 				0C9917D3294732ED000E93F7 /* RawgModel.swift in Sources */,

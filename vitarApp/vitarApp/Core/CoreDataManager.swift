@@ -29,7 +29,7 @@ final class FavoriteCoreDataManager {
             try managedContext.save()
             return true
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("detailGamesErrorMessage"), object: error.localizedDescription)
             return nil
         }
     }
@@ -41,6 +41,7 @@ final class FavoriteCoreDataManager {
             return games as! [Favorite]
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("favoriteGamesErrorMessage"), object: error.localizedDescription)
         }
         return []
     }
@@ -51,7 +52,7 @@ final class FavoriteCoreDataManager {
         do {
             try managedContext.save()
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("favoriteGamesErrorMessage"), object: error.localizedDescription)
         }
     }
     
@@ -61,7 +62,7 @@ final class FavoriteCoreDataManager {
         do {
             try managedContext.save()
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("favoriteGamesErrorMessage"), object: error.localizedDescription)
         }
     }
     
@@ -79,7 +80,7 @@ final class FavoriteCoreDataManager {
             }
             return false
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("detailGamesErrorMessage"), object: error.localizedDescription)
             return nil
         }
     }
@@ -97,7 +98,7 @@ final class FavoriteCoreDataManager {
             }
             return false
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("detailGamesErrorMessage"), object: error.localizedDescription)
             return nil
         }
     }
@@ -129,7 +130,7 @@ final class NoteCoreDataManager {
             try managedContext.save()
             return note as? Note
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("noteGamesErrorMessage"), object: error.localizedDescription)
         }
         
         return nil
@@ -141,7 +142,7 @@ final class NoteCoreDataManager {
             let notes = try managedContext.fetch(fetchRequest)
             return notes as! [Note]
         } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("noteGamesErrorMessage"), object: error.localizedDescription)
         }
         return []
     }
@@ -152,7 +153,7 @@ final class NoteCoreDataManager {
         do {
             try managedContext.save()
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("noteGamesErrorMessage"), object: error.localizedDescription)
         }
     }
     
@@ -168,7 +169,7 @@ final class NoteCoreDataManager {
         do {
             try managedContext.save()
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            NotificationCenter.default.post(name: NSNotification.Name("noteGamesErrorMessage"), object: error.localizedDescription)
         }
     }
     

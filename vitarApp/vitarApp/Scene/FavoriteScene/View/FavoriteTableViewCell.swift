@@ -88,10 +88,8 @@ class FavoriteTableViewCell: UITableViewCell {
     
     //MARK: - Private Functions
     private func changeImage(imgUrl:String?){
-        //Server sided ImageResizing
-        //TODO: Global Image Resizer
-        if let imgUrl = imgUrl?.replacingOccurrences(of: "media/g", with: "media/resize/420/-/g"){
-            guard let url = URL(string: imgUrl) else { return }
+        if let imgSized = Globals.sharedInstance.resizeImageRemote(imgUrl: imgUrl, size: 420){
+            guard let url = URL(string: imgSized) else { return }
             DispatchQueue.main.async {
                 self.gameImage.kf.setImage(with: url, placeholder: nil)
             }

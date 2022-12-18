@@ -35,6 +35,11 @@ class FavoriteSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("FAVORITES_PAGE", comment: "Favorite Games")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleError),
+                                               name: NSNotification.Name("favoriteGamesErrorMessage"),
+                                               object: nil)
+        
         viewModel.delegate = self
         activityIndicator.startAnimating()
         viewModel.fetchFavoriteGames()
@@ -47,7 +52,6 @@ class FavoriteSceneViewController: UIViewController {
             viewModel.fetchFavoriteGames()
         }
     }
-    
     //MARK: - Segue Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {

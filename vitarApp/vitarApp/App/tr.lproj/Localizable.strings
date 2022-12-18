@@ -13,6 +13,9 @@
 "UNKNOWN_DATE" = "TBA";
 "SAVE_TEXT" = "Kaydet";
 "CANCEL_TEXT" = "İptal";
+"ERROR_TITLE" = "Bir Hata Oluştu";
+"OK_BUTTON" = "Tamam";
+"APP_NAME" = "Vitar";
 
 //Page Titles
 "POPULAR_GAMES" = "Popüler Oyunlar";
@@ -35,3 +38,10 @@
 "PLACEHOLDER_NOTE" = "Notunuzu Buraya Girebilirsiniz...";
 "SELECT_BUTTON_TEXT" = "Seçmek İçin Tıklayın";
 "ZERO_NOTE" = "Hiç Notunuz Yok";
+
+//Error Messages
+"FETCH_ERROR" = "Veriler Çekilirken Bir Hatayla Karşılaşıldı";
+
+//Notifications
+"MISS_USER_NOTIFICATION" = "Sizi çok özledik.";
+"WILL_RELEASE_TODAY" = "bugün çıkıyor.";

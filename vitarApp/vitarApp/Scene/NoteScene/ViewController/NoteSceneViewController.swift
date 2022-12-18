@@ -36,6 +36,10 @@ class NoteSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("NOTES_PAGE", comment: "Notes Page")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleError),
+                                               name: NSNotification.Name("noteGamesErrorMessage"),
+                                               object: nil)
         viewModel.delegate = self
         activityIndicator.startAnimating()
         viewModel.fetchNotes()
@@ -46,7 +50,6 @@ class NoteSceneViewController: UIViewController {
             viewModel.fetchNotes()
         }
     }
-    
     //MARK: - Segue Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {

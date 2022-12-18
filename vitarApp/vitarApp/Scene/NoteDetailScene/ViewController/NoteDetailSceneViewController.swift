@@ -146,7 +146,7 @@ extension NoteDetailSceneViewController: UITextViewDelegate{
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if noteDetail.text.isEmpty {
-            noteDetail.text = "Enter Your Note Here..."
+            noteDetail.text = NSLocalizedString("PLACEHOLDER_NOTE", comment: "Placeholder")
             noteDetail.textColor = UIColor.placeholderText
         }
     }
