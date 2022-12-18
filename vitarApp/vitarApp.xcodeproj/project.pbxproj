@@ -58,6 +58,7 @@
 		0CEE92CC2948E4FB00B88175 /* HomeSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE92CB2948E4FB00B88175 /* HomeSceneViewModel.swift */; };
 		0CEE92CD2948E4FB00B88175 /* HomeSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE92CB2948E4FB00B88175 /* HomeSceneViewModel.swift */; };
 		0CEE92D32948F56500B88175 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0CEE92D22948F56500B88175 /* Kingfisher */; };
+		0CF66522294F57880053B86B /* UIImageColors in Frameworks */ = {isa = PBXBuildFile; productRef = 0CF66521294F57880053B86B /* UIImageColors */; };
 		0CFA555C294A17D300893FD4 /* GameDetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA555B294A17D300893FD4 /* GameDetailSceneViewController.swift */; };
 		0CFA555D294A17D300893FD4 /* GameDetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA555B294A17D300893FD4 /* GameDetailSceneViewController.swift */; };
 		0CFA555F294A1B3000893FD4 /* GameDetailSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA555E294A1B3000893FD4 /* GameDetailSceneViewModel.swift */; };
@@ -131,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF66522294F57880053B86B /* UIImageColors in Frameworks */,
 				0CEE92D32948F56500B88175 /* Kingfisher in Frameworks */,
 				0C9917D129472C40000E93F7 /* Alamofire in Frameworks */,
 			);
@@ -475,6 +477,7 @@
 			packageProductDependencies = (
 				0C9917D029472C40000E93F7 /* Alamofire */,
 				0CEE92D22948F56500B88175 /* Kingfisher */,
+				0CF66521294F57880053B86B /* UIImageColors */,
 			);
 			productName = vitarApp;
 			productReference = 0CB898082943A714005A6B35 /* vitarApp.app */;
@@ -552,6 +555,7 @@
 			packageReferences = (
 				0C9917CF29472C40000E93F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0CEE92D12948F56500B88175 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0CF66520294F57880053B86B /* XCRemoteSwiftPackageReference "UIImageColors" */,
 			);
 			productRefGroup = 0CB898092943A714005A6B35 /* Products */;
 			projectDirPath = "";
@@ -1013,6 +1017,14 @@
 				kind = branch;
 			};
 		};
+		0CF66520294F57880053B86B /* XCRemoteSwiftPackageReference "UIImageColors" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jathu/UIImageColors.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1025,6 +1037,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0CEE92D12948F56500B88175 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		0CF66521294F57880053B86B /* UIImageColors */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CF66520294F57880053B86B /* XCRemoteSwiftPackageReference "UIImageColors" */;
+			productName = UIImageColors;
 		};
 /* End XCSwiftPackageProductDependency section */
 

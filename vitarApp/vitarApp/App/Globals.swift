@@ -12,7 +12,12 @@ final class Globals {
     private init(){}
     
     //MARK: - Settings
-    var isLocalColorCalculationEnabled = false
+    var isLocalColorCalculationEnabled = true
+    #warning("Experimental feature enabled")
+    //Experimental
+    //Have performance Impact
+    //Does not have dark/light awarness
+    //can be hard to read
     
     //MARK: - States
     
